@@ -7,6 +7,7 @@ export const metadata: Metadata = {
 }
 
 
+
 interface TeamMemberProps {
     name: string;
     role: string;
