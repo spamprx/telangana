@@ -38,6 +38,7 @@ export default function AboutUsPage() {
             <TeamMember
               name="Asha Latha"
               //role="Project Director"
+              
               description="Coordinates between different teams and ensures the smooth operation of all initiatives."
               imageUrl="/ashalatha.jpg"
             />
