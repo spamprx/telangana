@@ -36,7 +36,6 @@ export function DistrictMap() {
           const paths = svgRef.current.querySelectorAll('.tel')
           
           paths.forEach(path => {
-            // For desktop devices - hover behavior
             path.addEventListener('mouseenter', (e) => {
               const target = e.target as SVGPathElement
               const districtName = target.getAttribute('name')
@@ -44,12 +43,14 @@ export function DistrictMap() {
               const originalStroke = target.style.stroke
               const originalStrokeWidth = target.style.strokeWidth
               const originalTransform = target.style.transform
+              const originalZIndex = target.style.zIndex
               
               target.style.stroke = '#2563eb' 
-              target.style.strokeWidth = '2'
-              target.style.transform = 'scale(1.05)'
+              target.style.strokeWidth = '3'
+              target.style.transform = 'scale(1.1)' 
               target.style.transformOrigin = 'center'
-              target.style.transition = 'all 0.3s ease'
+              target.style.transition = 'all 0.3s ease-in'
+              target.style.zIndex = '1' 
               
               setActiveDistrict(districtName)
               
@@ -57,6 +58,7 @@ export function DistrictMap() {
                 target.style.stroke = originalStroke
                 target.style.strokeWidth = originalStrokeWidth
                 target.style.transform = originalTransform
+                target.style.zIndex = originalZIndex // Reset z-index
                 setActiveDistrict(null)
                 
                 target.removeEventListener('mouseleave', handleMouseLeave)

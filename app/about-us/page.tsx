@@ -51,7 +51,7 @@ export default function AboutUsPage() {
               name="Deepthi Kangiri"
               role="Lead Content Editor"
               description="Oversees all content creation and maintains editorial standards."
-              imageUrl="/placeholder-profile3.jpg"
+              imageUrl="/deepthi.jpg"
             />
             <TeamMember
               name="Karthik Kumar"
