@@ -95,17 +95,17 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-white">Contact Us</h3>
             <address className="not-italic text-gray-400 space-y-2">
-              <p>123 Government Complex</p>
-              <p>Hyderabad, Telangana 500001</p>
+              <p>IIT Hyderadabad</p>
+              <p>Sangareddy, Telangana 502001</p>
               <p>India</p>
               <p className="mt-4">
-                <a href="mailto:info@telangana-portal.org" className="hover:text-white transition-colors">
-                  info@telangana-portal.org
+                <a href="mailto:jaitelangana2028@gmail.com" className="hover:text-white transition-colors">
+                    jaitelangana2028@gmail.com
                 </a>
               </p>
               <p>
-                <a href="tel:+919876543210" className="hover:text-white transition-colors">
-                  +91 9876 543 210
+                <a href="tel:+919440725957" className="hover:text-white transition-colors">
+                  +91 9440 725 957
                 </a>
               </p>
             </address>

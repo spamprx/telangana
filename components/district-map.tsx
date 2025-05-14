@@ -7,7 +7,23 @@ export function DistrictMap() {
   const router = useRouter()
   const [activeDistrict, setActiveDistrict] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(true)
+  const [isMobile, setIsMobile] = useState(false)
   const svgRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    // Check if device is mobile/tablet (no cursor)
+    const checkMobile = () => {
+      const isTouchDevice = 'ontouchstart' in window || 
+        navigator.maxTouchPoints > 0 ||
+        (navigator as any).msMaxTouchPoints > 0
+      
+      setIsMobile(isTouchDevice && window.innerWidth < 1024)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   useEffect(() => {
     setIsLoading(true)
@@ -20,6 +36,7 @@ export function DistrictMap() {
           const paths = svgRef.current.querySelectorAll('.tel')
           
           paths.forEach(path => {
+            // For desktop devices - hover behavior
             path.addEventListener('mouseenter', (e) => {
               const target = e.target as SVGPathElement
               const districtName = target.getAttribute('name')
@@ -48,15 +65,46 @@ export function DistrictMap() {
               target.addEventListener('mouseleave', handleMouseLeave)
             })
             
+            // Click handler for desktop
             path.addEventListener('click', (e) => {
+              if (!isMobile) {
+                const target = e.target as SVGPathElement
+                const districtName = target.getAttribute('name')
+                
+                if (districtName) {
+                  const slug = districtName.toLowerCase().replace(/\s+/g, '-')
+                  
+                  window.open(`/districts/${slug}`, '_blank')
+                }
+              }
+            })
+
+            // Touch handler for mobile - single tap shows name and highlights district
+            path.addEventListener('touchstart', (e) => {
               const target = e.target as SVGPathElement
               const districtName = target.getAttribute('name')
               
-              if (districtName) {
-                const slug = districtName.toLowerCase().replace(/\s+/g, '-')
-                
-                window.open(`/districts/${slug}`, '_blank')
-              }
+              // Reset all paths styling
+              const paths = svgRef.current?.querySelectorAll('.tel') || []
+              paths.forEach(p => {
+                const pathElement = p as SVGPathElement
+                pathElement.style.stroke = ''
+                pathElement.style.strokeWidth = ''
+                pathElement.style.transform = ''
+              })
+              
+              // Style the tapped district
+              target.style.stroke = '#2563eb' 
+              target.style.strokeWidth = '2'
+              target.style.transform = 'scale(1.05)'
+              target.style.transformOrigin = 'center'
+              target.style.transition = 'all 0.3s ease'
+              
+              // Set active district to show info
+              setActiveDistrict(districtName)
+              
+              // Prevent default to avoid zoom issues on mobile
+              e.preventDefault()
             })
           })
           
@@ -88,7 +136,15 @@ export function DistrictMap() {
         })
       }
     }
-  }, [router])
+  }, [router, isMobile])
+
+  // Function to handle viewing district details
+  const handleViewDistrictDetails = () => {
+    if (activeDistrict) {
+      const slug = activeDistrict.toLowerCase().replace(/\s+/g, '-')
+      window.open(`/districts/${slug}`, '_blank')
+    }
+  }
 
   return (
     <div className="relative w-full">
@@ -96,8 +152,21 @@ export function DistrictMap() {
         
         {activeDistrict && (
           <div className="absolute top-4 right-4 bg-white p-2 shadow-md rounded-md border z-10">
-            <h3 className="text-lg font-medium">{activeDistrict} Distr</h3>
-            <p className="text-sm text-gray-500">Click for details</p>
+            <h3 className="text-lg font-medium">{activeDistrict} District</h3>
+            {isMobile && (
+              <button 
+                onClick={handleViewDistrictDetails}
+                className="mt-2 w-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white py-1.5 px-3 rounded-md text-sm font-medium shadow-sm transition-all duration-200 flex items-center justify-center"
+              >
+                <span>View Details</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </button>
+            )}
+            {!isMobile && (
+              <p className="text-sm text-gray-500">Click for details</p>
+            )}
           </div>
         )}
         
@@ -115,7 +184,11 @@ export function DistrictMap() {
         </div>
         
         <div className="mt-4 text-sm text-gray-500">
-          <p>Hover over a district to see its name. Click on a district to view its details.</p>
+          {isMobile ? (
+            <p>Tap on a district to see its name and a button to view details.</p>
+          ) : (
+            <p>Hover over a district to see its name. Click on a district to view its details.</p>
+          )}
         </div>
       </div>
     </div>

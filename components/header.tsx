@@ -17,9 +17,9 @@ export function Header() {
         </Link>
 
         <nav className="hidden md:flex ml-auto gap-6">
-          <Link href="/" className="text-sm font-medium hover:text-orange-600 transition-colors">
+          {/* <Link href="/" className="text-sm font-medium hover:text-orange-600 transition-colors">
             Home
-          </Link>
+          </Link> */}
           <Link href="/districts" className="text-sm font-medium hover:text-orange-600 transition-colors">
             Districts
           </Link>
@@ -29,11 +29,11 @@ export function Header() {
           <Link href="/gallery" className="text-sm font-medium hover:text-orange-600 transition-colors">
             Gallery
           </Link>
-          <Link href="/about-us" className="text-sm font-medium hover:text-orange-600 transition-colors">
-            About Us
-          </Link>
           <Link href="/heritage" className="text-sm font-medium hover:text-orange-600 transition-colors">
             Heritage
+          </Link>
+          <Link href="/about-us" className="text-sm font-medium hover:text-orange-600 transition-colors">
+            About Us
           </Link>
           
         </nav>

@@ -58,7 +58,7 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold tracking-tighter mb-4 text-orange-600">About Us</h2>
+              <h2 className="text-3xl font-bold tracking-tighter mb-4 text-orange-600">Our Moto</h2>
               <p className="text-lg text-gray-700 mb-6">
                 We are dedicated to promoting transparency, development, and citizen engagement across Telangana. Our
                 mission is to bridge the gap between governance and citizens by providing accurate information about
