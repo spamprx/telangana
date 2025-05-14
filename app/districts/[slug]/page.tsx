@@ -27,7 +27,7 @@ export default function DistrictPage({ params }: { params: { slug: string } }) {
         <div className="absolute inset-0 z-0">
           <Image
             // src={district.coverImage || "/placeholder.svg"}
-            src="/dummy-image.jpg" // Using dummy image
+            src="/dummy-image.jpg" 
             alt={`${district.name} District`}
             fill
             className="object-cover brightness-[0.7]"

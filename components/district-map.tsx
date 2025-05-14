@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
-import { districts } from "@/lib/districts"
 
 export function DistrictMap() {
   const router = useRouter()
@@ -12,57 +11,43 @@ export function DistrictMap() {
 
   useEffect(() => {
     setIsLoading(true)
-    // Fetch the SVG as raw content
     fetch('/t.svg')
       .then(response => response.text())
       .then(svgContent => {
         if (svgRef.current) {
           svgRef.current.innerHTML = svgContent
           
-          // Get all the path elements that represent districts
           const paths = svgRef.current.querySelectorAll('.tel')
           
-          // Add event listeners to each path
           paths.forEach(path => {
-            // Handle mouse enter (hover)
             path.addEventListener('mouseenter', (e) => {
               const target = e.target as SVGPathElement
               const districtName = target.getAttribute('name')
               
-              // Store the original styles
-              const originalFill = target.style.fill
               const originalStroke = target.style.stroke
               const originalStrokeWidth = target.style.strokeWidth
               const originalTransform = target.style.transform
               
-              // Set hover styles
-              target.style.fill = '#e2e8f0' // light blue/gray
-              target.style.stroke = '#2563eb' // blue
+              target.style.stroke = '#2563eb' 
               target.style.strokeWidth = '2'
               target.style.transform = 'scale(1.05)'
               target.style.transformOrigin = 'center'
               target.style.transition = 'all 0.3s ease'
               
-              // Set active district
               setActiveDistrict(districtName)
               
-              // Handle mouse leave
               const handleMouseLeave = () => {
-                // Restore original styles
-                target.style.fill = originalFill
                 target.style.stroke = originalStroke
                 target.style.strokeWidth = originalStrokeWidth
                 target.style.transform = originalTransform
                 setActiveDistrict(null)
                 
-                // Remove the event listener
                 target.removeEventListener('mouseleave', handleMouseLeave)
               }
               
               target.addEventListener('mouseleave', handleMouseLeave)
             })
             
-            // Handle click
             path.addEventListener('click', (e) => {
               const target = e.target as SVGPathElement
               const districtName = target.getAttribute('name')
@@ -70,7 +55,7 @@ export function DistrictMap() {
               if (districtName) {
                 const slug = districtName.toLowerCase().replace(/\s+/g, '-')
                 
-                router.push(`/districts/${slug}`)
+                window.open(`/districts/${slug}`, '_blank')
               }
             })
           })
@@ -95,7 +80,6 @@ export function DistrictMap() {
         setIsLoading(false)
       })
       
-    // Cleanup function to remove event listeners
     return () => {
       if (svgRef.current) {
         const paths = svgRef.current.querySelectorAll('.tel')
@@ -112,7 +96,7 @@ export function DistrictMap() {
         
         {activeDistrict && (
           <div className="absolute top-4 right-4 bg-white p-2 shadow-md rounded-md border z-10">
-            <h3 className="text-lg font-medium">{activeDistrict}</h3>
+            <h3 className="text-lg font-medium">{activeDistrict} Distr</h3>
             <p className="text-sm text-gray-500">Click for details</p>
           </div>
         )}

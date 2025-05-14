@@ -4,7 +4,6 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
-import { LoginButton } from "@/components/login-button"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -30,11 +29,14 @@ export function Header() {
           <Link href="/gallery" className="text-sm font-medium hover:text-orange-600 transition-colors">
             Gallery
           </Link>
+          <Link href="/about-us" className="text-sm font-medium hover:text-orange-600 transition-colors">
+            About Us
+          </Link>
+          <Link href="/heritage" className="text-sm font-medium hover:text-orange-600 transition-colors">
+            Heritage
+          </Link>
+          
         </nav>
-
-        <div className="hidden md:flex items-center ml-6">
-          <LoginButton />
-        </div>
 
         <button className="ml-auto md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -73,9 +75,20 @@ export function Header() {
             >
               Gallery
             </Link>
-            <div className="pt-4 mt-4 border-t">
-              <LoginButton />
-            </div>
+            <Link
+              href="/about-us"
+              className="py-2 text-sm font-medium hover:text-orange-600 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About Us
+            </Link>
+            <Link
+              href="/heritage"
+              className="py-2 text-sm font-medium hover:text-orange-600 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Heritage
+            </Link>
           </nav>
         </div>
       )}

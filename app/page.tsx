@@ -1,11 +1,23 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { EventCard } from "@/components/event-card"
 import { GalleryPreview } from "@/components/gallery-preview"
+import { DistrictMap } from "@/components/district-map"
+import { useRef } from "react"
 
 export default function Home() {
+  const mapRef = useRef<HTMLElement | null>(null);
+
+  const scrollToMap = () => {
+    if (mapRef.current) {
+      mapRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <main className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -13,7 +25,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <Image
             // src="/hero-telangana.jpg"
-            src="/dummy-image.jpg" // Using dummy image
+            src="/dummy-image.jpg"
             alt="Telangana Landscape"
             fill
             className="object-cover brightness-[0.6]"
@@ -26,8 +38,8 @@ export default function Home() {
             Exploring the rich heritage, vibrant culture, and political landscape of India's youngest state
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700">
-              <Link href="/districts">Explore Districts</Link>
+            <Button size="lg" className="bg-orange-600 hover:bg-orange-700" onClick={scrollToMap}>
+              Explore State
             </Button>
             <Button
               asChild
@@ -75,40 +87,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Recent Events Preview */}
-      <section className="py-16 bg-gray-50">
+      {/* District Map Section */}
+      <section ref={mapRef} className="py-16 bg-gray-50">
         <div className="container px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter mb-8 text-center">Recent Events</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <EventCard
-              title="Warangal Development Conference"
-              date="May 15, 2023"
-              image="/event-1.jpg"
-              description="Discussion on infrastructure development and heritage preservation in Warangal district."
-              href="/events/warangal-conference"
-            />
-            <EventCard
-              title="Hyderabad Tech Summit"
-              date="April 22, 2023"
-              image="/event-2.jpg"
-              description="Bringing together technology leaders to discuss Telangana's digital future."
-              href="/events/tech-summit"
-            />
-            <EventCard
-              title="Rural Outreach Program"
-              date="March 10, 2023"
-              image="/event-3.jpg"
-              description="Community engagement initiative across rural districts to address agricultural concerns."
-              href="/events/rural-outreach"
-            />
-          </div>
-          <div className="text-center mt-10">
-            <Button asChild variant="outline" className="border-orange-600 text-orange-600 hover:bg-orange-50">
-              <Link href="/events">
-                View All Events <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
+          <h2 className="text-3xl font-bold tracking-tighter mb-8 text-center">Explore Telangana Districts</h2>
+          <DistrictMap />
         </div>
       </section>
 
