@@ -40,6 +40,10 @@ export function DistrictMap() {
               const target = e.target as SVGPathElement
               const districtName = target.getAttribute('name')
               
+              if (target.parentNode) {
+                target.parentNode.appendChild(target)
+              }
+              
               const originalStroke = target.style.stroke
               const originalStrokeWidth = target.style.strokeWidth
               const originalTransform = target.style.transform
@@ -158,8 +162,8 @@ export function DistrictMap() {
             {isMobile && (
               <button 
                 onClick={handleViewDistrictDetails}
-                className="mt-2 w-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white py-1.5 px-3 rounded-md text-sm font-medium shadow-sm transition-all duration-200 flex items-center justify-center"
-              >
+                className="mt-2 w-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 hover:ring-2 hover:ring-black text-white py-1.5 px-3 rounded-md text-sm font-medium shadow-sm transition-all duration-200 flex items-center justify-center"
+                >
                 <span>View Details</span>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />

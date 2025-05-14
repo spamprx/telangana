@@ -28,16 +28,22 @@ export default function AboutUsPage() {
       <div className="max-w-6xl mx-auto">
         <section className="mb-16">
           <h2 className="text-2xl font-semibold mb-6 text-orange-600 border-b pb-2">Leadership</h2>
-          <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+          <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             <TeamMember
               name="Nagendra"
-              role="Head of Department"
+              //role="Head of Department"
               description="Leads the overall vision and strategy for showcasing Telangana's rich culture."
               imageUrl="/placeholder-profile1.jpg"
             />
             <TeamMember
+              name="Asha Latha"
+              //role="Project Director"
+              description="Coordinates between different teams and ensures the smooth operation of all initiatives."
+              imageUrl="/ashalatha.jpg"
+            />
+            <TeamMember
               name="Tanish Reddy"
-              role="Project Director"
+              //role="Project Director"
               description="Coordinates between different teams and ensures the smooth operation of all initiatives."
               imageUrl="/placeholder-profile2.jpg"
             />
@@ -49,19 +55,19 @@ export default function AboutUsPage() {
           <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             <TeamMember
               name="Deepthi Kangiri"
-              role="Lead Content Editor"
+             //role="Lead Content Editor"
               description="Oversees all content creation and maintains editorial standards."
               imageUrl="/deepthi.jpg"
             />
             <TeamMember
               name="Karthik Kumar"
-              role="Content Writer"
+              //role="Content Writer"
               description="Researches and writes engaging content about Telangana's culture and heritage."
-              imageUrl="/placeholder-profile4.jpg"
+              imageUrl="/karthik.jpg"
             />
             <TeamMember
               name="Bhargavi Peela"
-              role="Content Writer"
+              //role="Content Writer"
               description="Specializes in coverage of local events and district profiles."
               imageUrl="/placeholder-profile5.jpg"
             />
@@ -73,7 +79,7 @@ export default function AboutUsPage() {
           <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             <TeamMember
               name="Praneeth Chamarthy"
-              role="Lead Developer"
+              //role="Lead Developer"
               description="Manages the technical infrastructure and development of the website."
               imageUrl="/hi.jpeg"
               socialLinks={{
@@ -84,7 +90,7 @@ export default function AboutUsPage() {
             />
             <TeamMember
               name="Sanjana Gona"
-              role="Web Developer"
+              //role="Web Developer"
               description="Implements frontend features and ensures responsive design across devices."
               imageUrl="/placeholder-profile8.jpg"
             />
@@ -93,22 +99,22 @@ export default function AboutUsPage() {
         
         <section>
           <h2 className="text-2xl font-semibold mb-6 text-orange-600 border-b pb-2">Photography Team</h2>
-          <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+          <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             <TeamMember
               name="Arjun Nenavath"
-              role="Lead Photographer"
+              //role="Lead Photographer"
               description="Captures the beauty of Telangana's landscapes, architecture, and people."
               imageUrl="/placeholder-profile9.jpg"
             />
             <TeamMember
               name="Chandra Neel"
-              role="Event Photographer"
+              //role="Event Photographer"
               description="Documents cultural events and festivals throughout the state."
               imageUrl="/placeholder-profile10.jpg"
             />
             <TeamMember
               name="Charan"
-              role="Photographer"
+              //role="Photographer"
               description="Captures the beauty of Telangana's landscapes, architecture, and people."
               imageUrl="/placeholder-profile9.jpg"
             />
@@ -134,7 +140,8 @@ function TeamMember({ name, role, description, imageUrl, socialLinks }: TeamMemb
         <div className="absolute bottom-4 left-4 right-4 z-20">
           <h3 className="text-xl font-bold text-white drop-shadow-md">{name}</h3>
           <div className="flex items-center mt-1">
-            <div className="h-0.5 w-8 bg-orange-500 mr-2"></div>
+            {/* Remove or comment out the orange line below */}
+            {/* <div className="h-0.5 w-8 bg-orange-500 mr-2"></div> */}
             <p className="text-orange-300 font-medium">{role}</p>
           </div>
         </div>
