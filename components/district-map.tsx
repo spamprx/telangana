@@ -98,14 +98,21 @@ export function DistrictMap() {
                   pathElement.style.stroke = ''
                   pathElement.style.strokeWidth = ''
                   pathElement.style.transform = ''
+                  pathElement.style.zIndex = ''
                 })
                 
+                // Bring the tapped element to the front
+                if (target.parentNode) {
+                  target.parentNode.appendChild(target)
+                }
+                
                 // Style the tapped district
-                target.style.stroke = '#2563eb' 
+                target.style.stroke = '#2563eb'
                 target.style.strokeWidth = '2'
                 target.style.transform = 'scale(1.05)'
                 target.style.transformOrigin = 'center'
                 target.style.transition = 'all 0.3s ease'
+                target.style.zIndex = '10'
                 
                 // Set active district to show info
                 setActiveDistrict(districtName)
