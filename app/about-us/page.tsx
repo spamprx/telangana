@@ -6,8 +6,6 @@ export const metadata: Metadata = {
   description: "Learn about the team behind Telangana's official website",
 }
 
-
-
 interface TeamMemberProps {
     name: string;
     role: string;
