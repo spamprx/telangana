@@ -29,18 +29,18 @@ export default function AboutUsPage() {
         <section className="mb-16">
           <h2 className="text-2xl font-semibold mb-6 text-orange-600 border-b pb-2">Leadership</h2>
           <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <TeamMember
+              name="Asha Latha"
+              //role="Project Director"
+              
+              description="Leads the overall vision and strategy for showcasing Telangana's rich culture."
+              imageUrl="/ashalatha.jpg"
+            />
             <TeamMember
               name="Nagendra"
               //role="Head of Department"
               description="Leads the overall vision and strategy for showcasing Telangana's rich culture."
               imageUrl="/placeholder-profile1.jpg"
-            />
-            <TeamMember
-              name="Asha Latha"
-              //role="Project Director"
-              
-              description="Coordinates between different teams and ensures the smooth operation of all initiatives."
-              imageUrl="/ashalatha.jpg"
             />
             <TeamMember
               name="Tanish Reddy"
@@ -52,7 +52,7 @@ export default function AboutUsPage() {
         </section>
         
         <section className="mb-16">
-          <h2 className="text-2xl font-semibold mb-6 text-orange-600 border-b pb-2">Editing Team</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-orange-600 border-b pb-2">Design and Editing Team</h2>
           <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             <TeamMember
               name="Deepthi Kangiri"
@@ -65,6 +65,12 @@ export default function AboutUsPage() {
               //role="Content Writer"
               description="Researches and writes engaging content about Telangana's culture and heritage."
               imageUrl="/karthik.jpg"
+            />
+            <TeamMember
+              name="Sreekari Pendem"
+              //role="Content Writer"
+              description="Researches and writes engaging content about Telangana's culture and heritage."
+              imageUrl="/sreekari.jpg"
             />
             <TeamMember
               name="Bhargavi Peela"
@@ -90,7 +96,7 @@ export default function AboutUsPage() {
               }}
             />
             <TeamMember
-              name="Sanjana Gona"
+              name="Gona Sanjana"
               //role="Web Developer"
               description="Implements frontend features and ensures responsive design across devices."
               imageUrl="/placeholder-profile8.jpg"
@@ -98,6 +104,18 @@ export default function AboutUsPage() {
           </div>
         </section>
         
+        <section className="mb-16">
+          <h2 className="text-2xl font-semibold mb-6 text-orange-600 border-b pb-2">Management Team</h2>
+          <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <TeamMember
+              name="Nihar"
+              //role="Web Developer"
+              description="Manages the technical infrastructure and development of the website."
+              imageUrl="/placeholder-profile8.jpg"
+            />
+          </div>
+        </section>
+
         <section>
           <h2 className="text-2xl font-semibold mb-6 text-orange-600 border-b pb-2">Photography Team</h2>
           <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

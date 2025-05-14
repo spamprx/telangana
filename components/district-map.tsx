@@ -36,82 +36,84 @@ export function DistrictMap() {
           const paths = svgRef.current.querySelectorAll('.tel')
           
           paths.forEach(path => {
-            path.addEventListener('mouseenter', (e) => {
-              const target = e.target as SVGPathElement
-              const districtName = target.getAttribute('name')
-              
-              if (target.parentNode) {
-                target.parentNode.appendChild(target)
-              }
-              
-              const originalStroke = target.style.stroke
-              const originalStrokeWidth = target.style.strokeWidth
-              const originalTransform = target.style.transform
-              const originalZIndex = target.style.zIndex
-              
-              target.style.stroke = '#2563eb' 
-              target.style.strokeWidth = '3'
-              target.style.transform = 'scale(1.1)' 
-              target.style.transformOrigin = 'center'
-              target.style.transition = 'all 0.3s ease-in'
-              target.style.zIndex = '1' 
-              
-              setActiveDistrict(districtName)
-              
-              const handleMouseLeave = () => {
-                target.style.stroke = originalStroke
-                target.style.strokeWidth = originalStrokeWidth
-                target.style.transform = originalTransform
-                target.style.zIndex = originalZIndex // Reset z-index
-                setActiveDistrict(null)
+            // Only add hover events for non-mobile devices
+            if (!isMobile) {
+              path.addEventListener('mouseenter', (e) => {
+                const target = e.target as SVGPathElement
+                const districtName = target.getAttribute('name')
                 
-                target.removeEventListener('mouseleave', handleMouseLeave)
-              }
+                if (target.parentNode) {
+                  target.parentNode.appendChild(target)
+                }
+                
+                const originalStroke = target.style.stroke
+                const originalStrokeWidth = target.style.strokeWidth
+                const originalTransform = target.style.transform
+                const originalZIndex = target.style.zIndex
+                
+                target.style.stroke = '#2563eb' 
+                target.style.strokeWidth = '3'
+                target.style.transform = 'scale(1.1)' 
+                target.style.transformOrigin = 'center'
+                target.style.transition = 'all 0.3s ease-in'
+                target.style.zIndex = '1' 
+                
+                setActiveDistrict(districtName)
+                
+                const handleMouseLeave = () => {
+                  target.style.stroke = originalStroke
+                  target.style.strokeWidth = originalStrokeWidth
+                  target.style.transform = originalTransform
+                  target.style.zIndex = originalZIndex
+                  setActiveDistrict(null)
+                  
+                  target.removeEventListener('mouseleave', handleMouseLeave)
+                }
+                
+                target.addEventListener('mouseleave', handleMouseLeave)
+              })
               
-              target.addEventListener('mouseleave', handleMouseLeave)
-            })
-            
-            // Click handler for desktop
-            path.addEventListener('click', (e) => {
-              if (!isMobile) {
+              // Click handler for desktop
+              path.addEventListener('click', (e) => {
                 const target = e.target as SVGPathElement
                 const districtName = target.getAttribute('name')
                 
                 if (districtName) {
                   const slug = districtName.toLowerCase().replace(/\s+/g, '-')
-                  
                   window.open(`/districts/${slug}`, '_blank')
                 }
-              }
-            })
-
-            // Touch handler for mobile - single tap shows name and highlights district
-            path.addEventListener('touchstart', (e) => {
-              const target = e.target as SVGPathElement
-              const districtName = target.getAttribute('name')
-              
-              // Reset all paths styling
-              const paths = svgRef.current?.querySelectorAll('.tel') || []
-              paths.forEach(p => {
-                const pathElement = p as SVGPathElement
-                pathElement.style.stroke = ''
-                pathElement.style.strokeWidth = ''
-                pathElement.style.transform = ''
               })
-              
-              // Style the tapped district
-              target.style.stroke = '#2563eb' 
-              target.style.strokeWidth = '2'
-              target.style.transform = 'scale(1.05)'
-              target.style.transformOrigin = 'center'
-              target.style.transition = 'all 0.3s ease'
-              
-              // Set active district to show info
-              setActiveDistrict(districtName)
-              
-              // Prevent default to avoid zoom issues on mobile
-              e.preventDefault()
-            })
+            }
+
+            // Touch handler for mobile devices only
+            if (isMobile) {
+              path.addEventListener('touchstart', (e) => {
+                const target = e.target as SVGPathElement
+                const districtName = target.getAttribute('name')
+                
+                // Reset all paths styling
+                const paths = svgRef.current?.querySelectorAll('.tel') || []
+                paths.forEach(p => {
+                  const pathElement = p as SVGPathElement
+                  pathElement.style.stroke = ''
+                  pathElement.style.strokeWidth = ''
+                  pathElement.style.transform = ''
+                })
+                
+                // Style the tapped district
+                target.style.stroke = '#2563eb' 
+                target.style.strokeWidth = '2'
+                target.style.transform = 'scale(1.05)'
+                target.style.transformOrigin = 'center'
+                target.style.transition = 'all 0.3s ease'
+                
+                // Set active district to show info
+                setActiveDistrict(districtName)
+                
+                // Prevent default to avoid zoom issues on mobile
+                e.preventDefault()
+              })
+            }
           })
           
           const svgElement = svgRef.current.querySelector('svg')
