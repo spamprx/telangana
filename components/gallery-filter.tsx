@@ -5,13 +5,13 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Search } from "lucide-react"
 
-const categories = [
-  { id: "all", name: "All Photos" },
-  { id: "events", name: "Events" },
-  { id: "districts", name: "District Visits" },
-  { id: "community", name: "Community Outreach" },
-  { id: "cultural", name: "Cultural Programs" },
-]
+// const categories = [
+//   { id: "all", name: "All Photos" },
+//   { id: "events", name: "Events" },
+//   { id: "districts", name: "District Visits" },
+//   { id: "community", name: "Community Outreach" },
+//   { id: "cultural", name: "Cultural Programs" },
+// ]
 
 const locations = [
   { id: "all", name: "All Locations" },
@@ -42,7 +42,7 @@ export function GalleryFilter() {
       </div>
 
       <div className="space-y-4">
-        <div>
+        {/* <div>
           <h3 className="text-sm font-medium mb-2">Category</h3>
           <div className="flex flex-wrap gap-2">
             {categories.map((category) => (
@@ -57,7 +57,7 @@ export function GalleryFilter() {
               </Button>
             ))}
           </div>
-        </div>
+        </div> */}
 
         <div>
           <h3 className="text-sm font-medium mb-2">Location</h3>

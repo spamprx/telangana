@@ -1,6 +1,10 @@
 import { EventCarousel } from "@/components/event-carousel"
 import { EventList } from "@/components/event-list"
 
+export const metadata = {
+  title: "Events"
+};
+
 export default function EventsPage() {
   return (
     <main className="flex flex-col min-h-screen">

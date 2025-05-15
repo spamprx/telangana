@@ -4,9 +4,19 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
+import { usePathname } from "next/navigation"
+
+const navLinks = [
+  { href: "/districts", label: "Districts" },
+  { href: "/events", label: "Events" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/heritage", label: "Heritage" },
+  { href: "/about-us", label: "About Us" },
+]
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white">
@@ -17,25 +27,20 @@ export function Header() {
         </Link>
 
         <nav className="hidden md:flex ml-auto gap-6">
-          {/* <Link href="/" className="text-sm font-medium hover:text-orange-600 transition-colors">
-            Home
-          </Link> */}
-          <Link href="/districts" className="text-sm font-medium hover:text-orange-600 transition-colors">
-            Districts
-          </Link>
-          <Link href="/events" className="text-sm font-medium hover:text-orange-600 transition-colors">
-            Events
-          </Link>
-          <Link href="/gallery" className="text-sm font-medium hover:text-orange-600 transition-colors">
-            Gallery
-          </Link>
-          <Link href="/heritage" className="text-sm font-medium hover:text-orange-600 transition-colors">
-            Heritage
-          </Link>
-          <Link href="/about-us" className="text-sm font-medium hover:text-orange-600 transition-colors">
-            About Us
-          </Link>
-          
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`
+                text-sm font-medium pb-1
+                text-black
+                ${pathname === link.href ? "border-b-2 border-orange-600" : "border-b-2 border-transparent hover:border-orange-600"}
+                transition-all duration-150 ease-in-out
+              `}
+            >
+              {link.label}
+            </Link>
+          ))}
         </nav>
 
         <button className="ml-auto md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>

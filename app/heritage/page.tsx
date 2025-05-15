@@ -2,10 +2,9 @@ import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
-export const metadata: Metadata = {
-  title: "Heritage of Telangana | Historical Places & Temples",
-  description: "Explore the rich cultural heritage of Telangana including temples, forts, and historical monuments.",
-}
+export const metadata = {
+  title: "Heritage"
+};
 
 interface HeritageCardProps {
     title: string;

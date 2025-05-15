@@ -2,9 +2,8 @@ import { Metadata } from "next"
 import Image from "next/image"
 
 export const metadata: Metadata = {
-  title: "About Us | Telangana",
-  description: "Learn about the team behind Telangana's official website",
-}
+  title: "About Us"
+};
 
 interface TeamMemberProps {
     name: string;
@@ -28,24 +27,29 @@ export default function AboutUsPage() {
         <section className="mb-16">
           <h2 className="text-2xl font-semibold mb-6 text-orange-600 border-b pb-2">Leadership</h2>
           <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          <TeamMember
+            <TeamMember
               name="Asha Latha"
-              //role="Project Director"
-              
+              //role="Project Director"              
               description="Leads the overall vision and strategy for showcasing Telangana's rich culture."
-              imageUrl="/ashalatha.jpg"
+              imageUrl="/team/ashalatha.jpg"
+            />
+            <TeamMember
+              name="BS Murthy"
+              //role="Project Director"
+              description="Leads the overall vision and strategy for showcasing Telangana's rich culture."
+              imageUrl="/team/murthy.jpg"
             />
             <TeamMember
               name="Nagendra"
               //role="Head of Department"
               description="Leads the overall vision and strategy for showcasing Telangana's rich culture."
-              imageUrl="/placeholder-profile1.jpg"
+              imageUrl="/team/nagendra.jpg"
             />
             <TeamMember
               name="Tanish Reddy"
               //role="Project Director"
               description="Coordinates between different teams and ensures the smooth operation of all initiatives."
-              imageUrl="/placeholder-profile2.jpg"
+              imageUrl="/team/tanish.jpg"
             />
           </div>
         </section>
@@ -54,28 +58,28 @@ export default function AboutUsPage() {
           <h2 className="text-2xl font-semibold mb-6 text-orange-600 border-b pb-2">Design and Editing Team</h2>
           <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             <TeamMember
-              name="Deepthi Kangiri"
+              name="Deepthi Kanigiri"
              //role="Lead Content Editor"
               description="Oversees all content creation and maintains editorial standards."
-              imageUrl="/deepthi.jpg"
+              imageUrl="/team/deepthi.jpg"
             />
             <TeamMember
               name="Karthik Kumar"
               //role="Content Writer"
               description="Researches and writes engaging content about Telangana's culture and heritage."
-              imageUrl="/karthik.jpg"
+              imageUrl="/team/karthik.jpg"
             />
             <TeamMember
               name="Sreekari Pendem"
               //role="Content Writer"
               description="Researches and writes engaging content about Telangana's culture and heritage."
-              imageUrl="/sreekari.jpg"
+              imageUrl="/team/sreekari.jpg"
             />
             <TeamMember
               name="Bhargavi Peela"
               //role="Content Writer"
               description="Specializes in coverage of local events and district profiles."
-              imageUrl="/placeholder-profile5.jpg"
+              imageUrl="/team/bhargavi.jpg"
             />
           </div>
         </section>
@@ -87,7 +91,7 @@ export default function AboutUsPage() {
               name="Praneeth Chamarthy"
               //role="Lead Developer"
               description="Manages the technical infrastructure and development of the website."
-              imageUrl="/hi.jpeg"
+              imageUrl="/team/praneeth.jpeg"
               socialLinks={{
                 twitter: "https://twitter.com/praneeth",
                 linkedin: "https://linkedin.com/in/praneeth",
@@ -98,7 +102,7 @@ export default function AboutUsPage() {
               name="Gona Sanjana"
               //role="Web Developer"
               description="Implements frontend features and ensures responsive design across devices."
-              imageUrl="/placeholder-profile8.jpg"
+              imageUrl="/team/sanjana.jpg"
             />
           </div>
         </section>
@@ -110,7 +114,13 @@ export default function AboutUsPage() {
               name="Nihar"
               //role="Web Developer"
               description="Manages the technical infrastructure and development of the website."
-              imageUrl="/placeholder-profile8.jpg"
+              imageUrl="/team/nihar.jpg"
+            />
+            <TeamMember
+              name="Charan"
+              //role="Photographer"
+              description="Captures the beauty of Telangana's landscapes, architecture, and people."
+              imageUrl="/team/charan.jpg"
             />
           </div>
         </section>
@@ -122,19 +132,13 @@ export default function AboutUsPage() {
               name="Arjun Nenavath"
               //role="Lead Photographer"
               description="Captures the beauty of Telangana's landscapes, architecture, and people."
-              imageUrl="/placeholder-profile9.jpg"
+              imageUrl="/team/arjun.jpg"
             />
             <TeamMember
               name="Chandra Neel"
               //role="Event Photographer"
               description="Documents cultural events and festivals throughout the state."
-              imageUrl="/placeholder-profile10.jpg"
-            />
-            <TeamMember
-              name="Charan"
-              //role="Photographer"
-              description="Captures the beauty of Telangana's landscapes, architecture, and people."
-              imageUrl="/placeholder-profile9.jpg"
+              imageUrl="/team/chandra.jpg"
             />
           </div>
         </section>
@@ -195,4 +199,4 @@ function TeamMember({ name, role, description, imageUrl, socialLinks }: TeamMemb
       </div>
     </div>
   )
-} 
+}

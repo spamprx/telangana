@@ -1,6 +1,10 @@
 import { GalleryFilter } from "@/components/gallery-filter"
 import { GalleryGrid } from "@/components/gallery-grid"
 
+export const metadata = {
+  title: "Gallery"
+};
+
 export default function GalleryPage() {
   return (
     <main className="flex flex-col min-h-screen">

@@ -1,6 +1,10 @@
 import { DistrictMap } from "@/components/district-map"
 import { DistrictList } from "@/components/district-list"
 
+export const metadata = {
+  title: "Districts"
+};
+
 export default function DistrictsPage() {
   return (
     <main className="flex flex-col min-h-screen">

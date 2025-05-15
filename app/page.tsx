@@ -8,6 +8,53 @@ import { EventCard } from "@/components/event-card"
 import { GalleryPreview } from "@/components/gallery-preview"
 import { DistrictMap } from "@/components/district-map"
 import { useRef } from "react"
+import { usePathname } from "next/navigation"
+import type { Metadata } from "next"
+
+const navLinks = [
+  { href: "/districts", label: "Districts" },
+  { href: "/events", label: "Events" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/heritage", label: "Heritage" },
+  { href: "/about", label: "About Us" },
+]
+
+export function Navbar() {
+  const pathname = usePathname()
+
+  return (
+    <nav className="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
+      <div className="container mx-auto px-4 md:px-6 py-3 flex justify-center items-center">
+        <div className="flex space-x-6 md:space-x-8">
+          {navLinks.map((link) => {
+            const isActive =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname === link.href || pathname.startsWith(link.href + "/");
+
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={`
+                  text-base font-medium pb-1
+                  text-black
+                  ${isActive
+                    ? "border-b-2 border-orange-600"
+                    : "border-b-2 border-transparent hover:border-orange-600"
+                  }
+                  transition-all duration-150 ease-in-out
+                `}
+              >
+                {link.label}
+              </Link>
+            )
+          })}
+        </div>
+      </div>
+    </nav>
+  )
+}
 
 export default function Home() {
   const mapRef = useRef<HTMLElement | null>(null);
@@ -112,3 +159,10 @@ export default function Home() {
     </main>
   )
 }
+
+// export async function generateMetadata({ params }: { params: { district: string } }): Promise<Metadata> {
+//   const districtName = params.district.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+//   return {
+//     title: `${districtName} District`
+//   };
+// }

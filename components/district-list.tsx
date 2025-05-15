@@ -14,6 +14,8 @@ export function DistrictList() {
             key={district.slug}
             href={`/districts/${district.slug}`}
             className="flex items-center p-4 hover:bg-orange-50 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <div className="relative h-12 w-12 rounded-md overflow-hidden flex-shrink-0">
               <Image

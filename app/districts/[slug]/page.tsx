@@ -1,8 +1,14 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { getDistrictData } from "@/lib/districts"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 export default function DistrictPage({ params }: { params: { slug: string } }) {
   const district = getDistrictData(params.slug)
@@ -54,22 +60,32 @@ export default function DistrictPage({ params }: { params: { slug: string } }) {
               <p className="text-gray-700 mb-6">{district.description}</p>
 
               <h2 className="text-2xl font-bold mb-4">Major Issues</h2>
-              <ul className="list-disc pl-5 mb-6 space-y-2">
+              <Accordion type="single" collapsible className="mb-6">
                 {district.issues.map((issue, index) => (
-                  <li key={index} className="text-gray-700">
-                    {issue}
-                  </li>
+                  <AccordionItem key={index} value={`issue-${index}`}>
+                    <AccordionTrigger className="text-lg font-medium text-left">
+                      {issue[0]}
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <p className="text-gray-700 pt-2">{issue[1]}</p>
+                    </AccordionContent>
+                  </AccordionItem>
                 ))}
-              </ul>
+              </Accordion>
 
               <h2 className="text-2xl font-bold mb-4">Initiatives</h2>
-              <ul className="list-disc pl-5 mb-6 space-y-2">
+              <Accordion type="single" collapsible className="mb-6">
                 {district.initiatives.map((initiative, index) => (
-                  <li key={index} className="text-gray-700">
-                    {initiative}
-                  </li>
+                  <AccordionItem key={index} value={`initiative-${index}`}>
+                    <AccordionTrigger className="text-lg font-medium text-left">
+                      {initiative[0]}
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <p className="text-gray-700 pt-2">{initiative[1]}</p>
+                    </AccordionContent>
+                  </AccordionItem>
                 ))}
-              </ul>
+              </Accordion>
             </div>
 
             <div className="lg:col-span-1">
