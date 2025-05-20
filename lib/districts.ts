@@ -13,6 +13,7 @@ export interface District {
   mapImage: string
   thumbnail: string
   mapCoords: string // For image map
+  carouselImages: string[] // Array of images for the carousel
 }
 
 // // Formatting function
@@ -71,6 +72,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "120,150,180,200", // Placeholder coordinates
+    carouselImages: [
+      "/districts/hyderabad/dummy-image.jpg",
+      "/districts/hyderabad/dummy-image.jpg",
+      "/districts/hyderabad/dummy-image.jpg",
+      "/districts/hyderabad/dummy-image.jpg"
+    ]
   },  
   {
     id: 2,
@@ -122,6 +129,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "220,120,280,170", // Placeholder coordinates
+    carouselImages: [
+      "/districts/warangal/fort.jpg",
+      "/districts/warangal/temple.jpg",
+      "/districts/warangal/lake.jpg",
+      "/districts/warangal/city.jpg"
+    ]
   },  
   {
     id: 3,
@@ -173,6 +186,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "180,80,240,130", // Placeholder coordinates
+    carouselImages: [
+      "/districts/karimnagar/city.jpg",
+      "/districts/karimnagar/temple.jpg",
+      "/districts/karimnagar/lake.jpg",
+      "/districts/karimnagar/industry.jpg"
+    ]
   },
   {
     id: 4,
@@ -224,6 +243,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "140,60,200,110", // Placeholder coordinates
+    carouselImages: [
+      "/districts/nizamabad/city.jpg",
+      "/districts/nizamabad/temple.jpg",
+      "/districts/nizamabad/agriculture.jpg",
+      "/districts/nizamabad/lake.jpg"
+    ]
   },
   {
     id: 5,
@@ -275,6 +300,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "260,180,320,230", // Placeholder coordinates
+    carouselImages: [
+      "/districts/khammam/city.jpg",
+      "/districts/khammam/forest.jpg",
+      "/districts/khammam/temple.jpg",
+      "/districts/khammam/industry.jpg"
+    ]
   },
   {
     id: 6,
@@ -326,6 +357,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "160,40,220,90", // Placeholder coordinates
+    carouselImages: [
+      "/dummy-image.jpg",
+      "/dummy-image.jpg",
+      "/dummy-image.jpg",
+      "/dummy-image.jpg"
+    ]
   },
   {
     id: 7,
@@ -377,6 +414,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "280,200,340,250", // Placeholder coordinates
+    carouselImages: [
+      "/districts/bhadradri/temple.jpg",
+      "/districts/bhadradri/forest.jpg",
+      "/districts/bhadradri/city.jpg",
+      "/districts/bhadradri/industry.jpg"
+    ]
   },  
   {
     id: 8,
@@ -428,6 +471,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "230,130,290,180", // Placeholder coordinates
+    carouselImages: [
+      "/districts/hanumakonda/city.jpg",
+      "/districts/hanumakonda/temple.jpg",
+      "/districts/hanumakonda/education.jpg",
+      "/districts/hanumakonda/lake.jpg"
+    ]
   },  
   {
     id: 9,
@@ -479,6 +528,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "190,90,250,140", // Placeholder coordinates
+    carouselImages: [
+      "/districts/jagtial/city.jpg",
+      "/districts/jagtial/temple.jpg",
+      "/districts/jagtial/agriculture.jpg",
+      "/districts/jagtial/industry.jpg"
+    ]
   },
   {
     id: 10,
@@ -530,6 +585,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "210,140,270,190", // Placeholder coordinates
+    carouselImages: [
+      "/districts/jangaon/city.jpg",
+      "/districts/jangaon/temple.jpg",
+      "/districts/jangaon/agriculture.jpg",
+      "/districts/jangaon/lake.jpg"
+    ]
   },
   
   {
@@ -582,6 +643,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "200,110,260,160", // Placeholder coordinates
+    carouselImages: [
+      "/districts/jayashankar/forest.jpg",
+      "/districts/jayashankar/temple.jpg",
+      "/districts/jayashankar/wildlife.jpg",
+      "/districts/jayashankar/city.jpg"
+    ]
   },
   {
     id: 12,
@@ -633,6 +700,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "150,220,210,270", // Placeholder coordinates
+    carouselImages: [
+      "/districts/gadwal/temple.jpg",
+      "/districts/gadwal/city.jpg",
+      "/districts/gadwal/agriculture.jpg",
+      "/districts/gadwal/lake.jpg"
+    ]
   },  
   {
     id: 13,
@@ -684,6 +757,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "130,70,190,120", // Placeholder coordinates
+    carouselImages: [
+      "/districts/kamareddy/city.jpg",
+      "/districts/kamareddy/temple.jpg",
+      "/districts/kamareddy/agriculture.jpg",
+      "/districts/kamareddy/industry.jpg"
+    ]
   },
   {
     id: 14,
@@ -735,6 +814,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "170,30,230,80", // Placeholder coordinates
+    carouselImages: [
+      "/districts/komaram-bheem/forest.jpg",
+      "/districts/komaram-bheem/temple.jpg",
+      "/districts/komaram-bheem/wildlife.jpg",
+      "/districts/komaram-bheem/city.jpg"
+    ]
   },
   {
     id: 15,
@@ -786,6 +871,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "240,160,300,210", // Placeholder coordinates
+    carouselImages: [
+      "/districts/mahabubabad/city.jpg",
+      "/districts/mahabubabad/temple.jpg",
+      "/districts/mahabubabad/forest.jpg",
+      "/districts/mahabubabad/agriculture.jpg"
+    ]
   },  
   {
     id: 17,
@@ -837,6 +928,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "180,50,240,100", // Placeholder coordinates
+    carouselImages: [
+      "/districts/mancherial/city.jpg",
+      "/districts/mancherial/industry.jpg",
+      "/districts/mancherial/temple.jpg",
+      "/districts/mancherial/lake.jpg"
+    ]
   },
   {
     id: 18,
@@ -888,6 +985,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "110,120,170,170", // Placeholder coordinates
+    carouselImages: [
+      "/districts/medak/cathedral.jpg",
+      "/districts/medak/city.jpg",
+      "/districts/medak/temple.jpg",
+      "/districts/medak/agriculture.jpg"
+    ]
   },  
   {
     id: 19,
@@ -939,6 +1042,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "110,160,170,210", // Placeholder coordinates
+    carouselImages: [
+      "/districts/medchal/city.jpg",
+      "/districts/medchal/industry.jpg",
+      "/districts/medchal/temple.jpg",
+      "/districts/medchal/lake.jpg"
+    ]
   },     
   {
     id: 20,
@@ -990,6 +1099,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "220,140,280,190", // Placeholder coordinates
+    carouselImages: [
+      "/districts/mulugu/ramappa.jpg",
+      "/districts/mulugu/forest.jpg",
+      "/districts/mulugu/temple.jpg",
+      "/districts/mulugu/city.jpg"
+    ]
   },
   {
     id: 21,
@@ -1041,6 +1156,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "170,210,230,260", // Keep existing coordinates
+    carouselImages: [
+      "/districts/nagarkurnool/city.jpg",
+      "/districts/nagarkurnool/temple.jpg",
+      "/districts/nagarkurnool/lake.jpg",
+      "/districts/nagarkurnool/agriculture.jpg"
+    ]
   },  
   {
     id: 22,
@@ -1092,6 +1213,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "190,180,250,230", // Keep existing coordinates
+    carouselImages: [
+      "/districts/nalgonda/city.jpg",
+      "/districts/nalgonda/temple.jpg",
+      "/districts/nalgonda/industry.jpg",
+      "/districts/nalgonda/lake.jpg"
+    ]
   },  
   {
     id: 23,
@@ -1143,6 +1270,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "140,230,200,280", // Placeholder coordinates
+    carouselImages: [
+      "/districts/narayanpet/city.jpg",
+      "/districts/narayanpet/temple.jpg",
+      "/districts/narayanpet/handloom.jpg",
+      "/districts/narayanpet/agriculture.jpg"
+    ]
   },
   {
     id: 24,
@@ -1194,6 +1327,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "170,50,230,100", // Placeholder coordinates
+    carouselImages: [
+      "/districts/nirmal/city.jpg",
+      "/districts/nirmal/furniture.jpg",
+      "/districts/nirmal/temple.jpg",
+      "/districts/nirmal/forest.jpg"
+    ]
   },
   {
     id: 25,
@@ -1245,6 +1384,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "190,70,250,120", // Placeholder coordinates
+    carouselImages: [
+      "/districts/peddapalli/city.jpg",
+      "/districts/peddapalli/industry.jpg",
+      "/districts/peddapalli/temple.jpg",
+      "/districts/peddapalli/lake.jpg"
+    ]
   },
   {
     id: 26,
@@ -1296,6 +1441,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "180,90,240,140", // Placeholder coordinates
+    carouselImages: [
+      "/districts/rajanna/city.jpg",
+      "/districts/rajanna/textile.jpg",
+      "/districts/rajanna/temple.jpg",
+      "/districts/rajanna/industry.jpg"
+    ]
   },
   {
     id: 27,
@@ -1347,6 +1498,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "130,170,190,220", // Placeholder coordinates
+    carouselImages: [
+      "/districts/ranga-reddy/city.jpg",
+      "/districts/ranga-reddy/industry.jpg",
+      "/districts/ranga-reddy/temple.jpg",
+      "/districts/ranga-reddy/lake.jpg"
+    ]
   },  
   {
     id: 28,
@@ -1398,6 +1555,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "100,130,160,180", // Placeholder coordinates
+    carouselImages: [
+      "/districts/sangareddy/city.jpg",
+      "/districts/sangareddy/industry.jpg",
+      "/districts/sangareddy/temple.jpg",
+      "/districts/sangareddy/agriculture.jpg"
+    ]
   },  
   {
     id: 29,
@@ -1449,6 +1612,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "140,110,200,160", // Placeholder coordinates
+    carouselImages: [
+      "/districts/siddipet/city.jpg",
+      "/districts/siddipet/temple.jpg",
+      "/districts/siddipet/agriculture.jpg",
+      "/districts/siddipet/lake.jpg"
+    ]
   },  
   {
     id: 30,
@@ -1500,6 +1669,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "210,170,270,220", // Keep existing coordinates
+    carouselImages: [
+      "/districts/suryapet/city.jpg",
+      "/districts/suryapet/temple.jpg",
+      "/districts/suryapet/agriculture.jpg",
+      "/districts/suryapet/dairy.jpg"
+    ]
   },  
   {
     id: 32,
@@ -1551,6 +1726,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "150,210,210,260", // Placeholder coordinates
+    carouselImages: [
+      "/districts/wanaparthy/city.jpg",
+      "/districts/wanaparthy/temple.jpg",
+      "/districts/wanaparthy/agriculture.jpg",
+      "/districts/wanaparthy/lake.jpg"
+    ]
   },  
   {
     id: 33,
@@ -1602,6 +1783,12 @@ export const districts: District[] = [
     mapImage: "/dummy-image.jpg",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "160,160,220,210", // Placeholder coordinates
+    carouselImages: [
+      "/districts/yadadri/temple.jpg",
+      "/districts/yadadri/city.jpg",
+      "/districts/yadadri/agriculture.jpg",
+      "/districts/yadadri/lake.jpg"
+    ]
   },  
 ];
 
@@ -1609,19 +1796,3 @@ export function getDistrictData(slug: string): District | undefined {
   return districts.find((district) => district.slug === slug);
 }
 
-// export function getDistrictWithFormattedDetails(slug: string): (District & { formattedIssues: string[]; formattedInitiatives: string[] }) | undefined {
-//   const district = getDistrictData(slug); // Use existing function to find the district
-//   if (district) {
-//     // Call formatEntries for issues and initiatives
-//     const formattedIssues = formatEntries(district.issues);
-//     const formattedInitiatives = formatEntries(district.initiatives);
-    
-//     // Return the original district data along with the formatted strings
-//     return {
-//       ...district,
-//       formattedIssues,
-//       formattedInitiatives,
-//     };
-//   }
-//   return undefined;
-// }

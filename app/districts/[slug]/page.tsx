@@ -1,8 +1,13 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { getDistrictData } from "@/lib/districts"
+import useEmblaCarousel from 'embla-carousel-react'
+import { useCallback } from 'react'
+import { use } from 'react'
 import {
   Accordion,
   AccordionContent,
@@ -10,8 +15,52 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 
-export default function DistrictPage({ params }: { params: { slug: string } }) {
-  const district = getDistrictData(params.slug)
+function Carousel({ images }: { images: string[] }) {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev()
+  }, [emblaApi])
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext()
+  }, [emblaApi])
+
+  return (
+    <div className="relative">
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex">
+          {images.map((src, index) => (
+            <div key={index} className="flex-[0_0_100%] min-w-0 relative h-[40vh]">
+              <Image
+                src={src}
+                alt={`District Image ${index + 1}`}
+                fill
+                className="object-cover brightness-[0.7]"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+      <button
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
+        onClick={scrollPrev}
+      >
+        <ArrowLeft className="h-6 w-6" />
+      </button>
+      <button
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
+        onClick={scrollNext}
+      >
+        <ArrowLeft className="h-6 w-6 rotate-180" />
+      </button>
+    </div>
+  )
+}
+
+export default function DistrictPage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = use(params)
+  const district = getDistrictData(resolvedParams.slug)
 
   if (!district) {
     return (
@@ -31,13 +80,7 @@ export default function DistrictPage({ params }: { params: { slug: string } }) {
     <main className="flex flex-col min-h-screen">
       <section className="relative h-[40vh] flex items-center justify-center">
         <div className="absolute inset-0 z-0">
-          <Image
-            // src={district.coverImage || "/placeholder.svg"}
-            src="/dummy-image.jpg" 
-            alt={`${district.name} District`}
-            fill
-            className="object-cover brightness-[0.7]"
-          />
+          <Carousel images={district.carouselImages} />
         </div>
         <div className="container relative z-10 px-4 md:px-6 text-center text-white">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">{district.name} District</h1>

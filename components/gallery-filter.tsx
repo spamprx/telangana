@@ -21,9 +21,8 @@ const locations = [
   { id: "nizamabad", name: "Nizamabad" },
 ]
 
-export function GalleryFilter() {
-  const [activeCategory, setActiveCategory] = useState("all")
-  const [activeLocation, setActiveLocation] = useState("all")
+export function GalleryFilter({ activeLocation, setActiveLocation }: { activeLocation: string, setActiveLocation: (loc: string) => void }) {
+  // Remove local activeLocation state
   const [searchQuery, setSearchQuery] = useState("")
 
   return (

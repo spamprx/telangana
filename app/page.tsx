@@ -9,7 +9,6 @@ import { GalleryPreview } from "@/components/gallery-preview"
 import { DistrictMap } from "@/components/district-map"
 import { useRef } from "react"
 import { usePathname } from "next/navigation"
-import type { Metadata } from "next"
 
 const navLinks = [
   { href: "/districts", label: "Districts" },
