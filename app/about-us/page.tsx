@@ -23,7 +23,7 @@ const teamMembers: TeamMemberProps[] = [
     name: "Asha Latha",
     role: "Project Director",
     description: "Visionary leader with 20+ years of experience in cultural preservation and community development.",
-    imageUrl: "/team/ashalatha.jpg",
+    imageUrl: "/team/ashalatha.jpeg",
     isLeadership: true,
     profileDetails: `Dr. Asha Latha is a distinguished cultural preservationist and community development expert with over two decades of experience. She holds a Ph.D. in Cultural Anthropology and has been instrumental in preserving Telangana's rich heritage through various initiatives.
 
@@ -39,7 +39,7 @@ const teamMembers: TeamMemberProps[] = [
     name: "BS Murthy",
     role: "Project Director",
     description: "Strategic leader with extensive experience in cultural management and heritage preservation.",
-    imageUrl: "/team/charan1.jpg",
+    imageUrl: "/team/bs-murthy.jpg",
     isLeadership: true,
     profileDetails: `BS Murthy is a seasoned cultural management expert with a proven track record in heritage preservation and community development. With a Master's in Cultural Management and over 15 years of experience, he has been at the forefront of several successful cultural initiatives.
 
@@ -58,24 +58,24 @@ const teamMembers: TeamMemberProps[] = [
     imageUrl: "/team/nagendra.jpg",
     isLeadership: true,
     profileDetails: `Nagendra 
-Professional Cricketer | IIT Bombay Alumnus | Development Advocate
+      Professional Cricketer | IIT Bombay Alumnus | Development Advocate
 
-I am a distinguished IIT Bombay B.Tech alumnus and a professional cricketer, representing the Hyderabad Ranji Trophy team and playing county cricket in the UK. Splitting my time between Hyderabad and the UK, it brings discipline, strategy, and resilience from the cricketing arena into my broader vision for development. 
+      I am a distinguished IIT Bombay B.Tech alumnus and a professional cricketer, representing the Hyderabad Ranji Trophy team and playing county cricket in the UK. Splitting my time between Hyderabad and the UK, it brings discipline, strategy, and resilience from the cricketing arena into my broader vision for development. 
 
-A phrase that has guided me since childhood is my mother's wisdom:
-"Nanna, when you open your eyes, you should see the nation; when you close them, you should see God."
+      A phrase that has guided me since childhood is my mother's wisdom:
+      "Nanna, when you open your eyes, you should see the nation; when you close them, you should see God."
 
-In Telugu: "నాన్న, కళ్ళు తెరిస్తే దేశం కనిపించాలి, కళ్ళు మూసితే దేవుడు కనిపించాలి."
+      In Telugu: "నాన్న, కళ్ళు తెరిస్తే దేశం కనిపించాలి, కళ్ళు మూసితే దేవుడు కనిపించాలి."
 
-This profound thought emphasizes that one's vision should always be on understanding and serving the country, while inner reflection should be guided by faith and purpose. It has shaped my journey, inspiring me to connect deeply with people, understand their struggles, and work towards meaningful development.
+      This profound thought emphasizes that one's vision should always be on understanding and serving the country, while inner reflection should be guided by faith and purpose. It has shaped my journey, inspiring me to connect deeply with people, understand their struggles, and work towards meaningful development.
 
-Beyond cricket, I have extensively traveled across Telangana, visiting 8,381 villages, 4,872 government schools, 429 hospitals, all major irrigation projects, power plants, and industrial hubs. My hands-on engagement with communities, farmers, educators, healthcare workers, and entrepreneurs has given me deep insights into the challenges and opportunities within the region.`
+      Beyond cricket, I have extensively traveled across Telangana, visiting 8,381 villages, 4,872 government schools, 429 hospitals, all major irrigation projects, power plants, and industrial hubs. My hands-on engagement with communities, farmers, educators, healthcare workers, and entrepreneurs has given me deep insights into the challenges and opportunities within the region.`
   },
   {
     name: "Tanish Reddy",
     role: "Co-Head of Technical Operations",
     description: "Technical leader specializing in backend systems and infrastructure development.Technical leader with expertise in digital infrastructure and cultural preservation technology.Technical leader with expertise in digital infrastructure and cultural preservation technology.",
-    imageUrl: "/team/tanish.jpg",
+    imageUrl: "/team/tanish.jpeg",
     isLeadership: true,
     socialLinks: {
       twitter: "https://twitter.com/praneeth",
@@ -96,7 +96,7 @@ Beyond cricket, I have extensively traveled across Telangana, visiting 8,381 vil
     name: "Nihar",
     role: "Co-Head of Technical Operations",
     description: "Technical leader specializing in backend systems and infrastructure development.Technical leader with expertise in digital infrastructure and cultural preservation technology.Technical leader with expertise in digital infrastructure and cultural preservation technology.",
-    imageUrl: "/team/charan1.jpg",
+    imageUrl: "/team/nihar.jpeg",
     isLeadership: true,
     socialLinks: {
       twitter: "https://twitter.com/praneeth",
@@ -119,6 +119,11 @@ Beyond cricket, I have extensively traveled across Telangana, visiting 8,381 vil
     role: "Lead Content Creator",
     description: "Oversees all content creation and maintains editorial standards.",
     imageUrl: "/team/deepthi.jpg",
+    socialLinks: {
+      twitter: "https://twitter.com/praneeth",
+      linkedin: "https://linkedin.com/in/praneeth",
+      github: "https://github.com/praneeth"
+    },
     profileDetails: `I'm Deepthi Kanigiri, a postgraduate student in Aerospace Engineering and the Lead Content Creator for this platform. My role spans the full content development cycle—concept design, editorial oversight, and visual storytelling—delivering content that's technically sound, engaging, and accessible. With hands on experience in CAD modeling, aerodynamic simulations, and engineering tools like SolidWorks and AutoCAD, I bring a unique blend of analytical thinking and creative execution. My current research on hypersonic airflow behavior shapes how I approach complexity-breaking it down and communicating it clearly.
     
     I blend engineering logic with creative communication to design high impact content across formats from technical briefs and slide decks to interactive visuals and design systems using tools like Canva and PowerPoint. Mathematics and music both sharpen my structural thinking and narrative clarity, while anime fuels my passion for visual storytelling. Whether under tight deadlines or high-pressure scenarios, I prioritize intentionality, clarity, and coherence building content that not only informs but connects.`
@@ -128,6 +133,11 @@ Beyond cricket, I have extensively traveled across Telangana, visiting 8,381 vil
     role: "Content Writer",
     description: "Specializes in coverage of local events and district profiles.",
     imageUrl: "/team/bhargavi.jpg",
+    socialLinks: {
+      twitter: "https://twitter.com/praneeth",
+      linkedin: "https://linkedin.com/in/praneeth",
+      github: "https://github.com/praneeth"
+    },
     profileDetails: "Bhargavi Peela covers local events and brings district stories to life."
   },
 
@@ -136,6 +146,11 @@ Beyond cricket, I have extensively traveled across Telangana, visiting 8,381 vil
     role: "Content Writer",
     description: "Researches and writes engaging content about Telangana's culture and heritage.",
     imageUrl: "/team/sreekari.jpg",
+    socialLinks: {
+      twitter: "https://twitter.com/praneeth",
+      linkedin: "https://linkedin.com/in/praneeth",
+      github: "https://github.com/praneeth"
+    },
     profileDetails: `Hi! I'm P. Sreekari, an undergraduate student from the Engineering Science Department at IIT Hyderabad. I'm a curious and creative mind who loves exploring ideas, solving problems, and learning something new every day.
 
     Whether it's through writing code, creating art, or having thoughtful conversations, I enjoy finding meaningful ways to connect with people and make a positive impact. I'm passionate about blending logic with creativity to understand the world better and maybe even change it a little.`
@@ -158,6 +173,11 @@ Beyond cricket, I have extensively traveled across Telangana, visiting 8,381 vil
     role: "Web Developer",
     description: "Implements frontend features and ensures responsive design across devices.",
     imageUrl: "/team/sanjana.jpg",
+    socialLinks: {
+      twitter: "https://twitter.com/praneeth",
+      linkedin: "https://linkedin.com/in/praneeth",
+      github: "https://github.com/praneeth"
+    },
     profileDetails: `I'm Gona Sanjana, a second-year Computer Science Engineering undergraduate at IIT Hyderabad. I'm passionate about front-end development and have honed my skills through self-driven learning and hands-on projects. From building a RISCV cache simulator to creating a dynamic cricket tournament management website, I enjoy solving complex problems and bringing ideas to life through code.
 
     My technical toolkit includes HTML, CSS, JavaScript, React, Node.js, and tools like Git and Docker. I'm a fast learner who thrives in collaborative environments and takes pride in balancing academics with extracurriculars. Outside the classroom, I'm an active member of the Shuffle Crew dance club, where I've performed in and helped organize several events, including Inter IIT competitions.
@@ -165,24 +185,27 @@ Beyond cricket, I have extensively traveled across Telangana, visiting 8,381 vil
     I constantly seek opportunities to grow—both as a developer and as a creative individual.`
   },
   {
-    name: "Chandra Neel",
-    role: "Event Photographer",
-    description: "Documents cultural events and festivals throughout the state.",
-    imageUrl: "/team/chandra.jpg",
-    profileDetails: "Chandra Neel specializes in event photography, documenting Telangana's vibrant festivals."
-  },
-  {
     name: "Arjun Nenavath",
     role: "Lead Photographer",
     description: "Captures the beauty of Telangana's landscapes, architecture, and people.",
     imageUrl: "/team/arjun.jpg",
+    socialLinks: {
+      twitter: "https://twitter.com/praneeth",
+      linkedin: "https://linkedin.com/in/praneeth",
+      github: "https://github.com/praneeth"
+    },
     profileDetails: "Arjun Nenavath leads the photography team, capturing stunning visuals across Telangana."
   },
   {
     name: "Karthik Kumar",
-    role: "Content Writer",
+    role: "Photographer",
     description: "Researches and writes engaging content about Telangana's culture and heritage.",
     imageUrl: "/team/karthik.jpg",
+    socialLinks: {
+      twitter: "https://twitter.com/praneeth",
+      linkedin: "https://linkedin.com/in/praneeth",
+      github: "https://github.com/praneeth"
+    },
     profileDetails:` Hello! I'm Narayana Karthik Kumar, an 3rd year undergraduate student at the Indian Institute of Technology Hyderabad (IIT Hyderabad). I'm currently pursuing my academic journey here with a deep interest in technology, innovation, and problem-solving. IIT Hyderabad has given me a platform to explore not just the depths of my chosen field, but also the broader spectrum of learning, collaboration, and personal growth.
 
     I believe in the power of curiosity and creativity to drive meaningful change. Whether it's working on class projects, participating in tech events, or collaborating with fellow students on real-world challenges, I'm always looking for opportunities to apply what I learn and push the boundaries of what's possible.
@@ -199,9 +222,14 @@ Beyond cricket, I have extensively traveled across Telangana, visiting 8,381 vil
   // Management Team
   {
     name: "Charan",
-    role: "Photographer",
-    description: "Captures the beauty of Telangana's landscapes, architecture, and people.",
+    role: "Management Team",
+    description: "Manages the organization's operations and ensures smooth coordination.",
     imageUrl: "/team/charan1.jpg",
+    socialLinks: {
+      twitter: "https://twitter.com/praneeth",
+      linkedin: "https://linkedin.com/in/praneeth",
+      github: "https://github.com/praneeth"
+    },
     profileDetails: "Charan is a passionate photographer with a love for Telangana's scenic beauty."
   }
   // Photography Team

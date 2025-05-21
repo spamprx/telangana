@@ -21,9 +21,24 @@ const locations = [
   { id: "nizamabad", name: "Nizamabad" },
 ]
 
-export function GalleryFilter({ activeLocation, setActiveLocation }: { activeLocation: string, setActiveLocation: (loc: string) => void }) {
-  // Remove local activeLocation state
-  const [searchQuery, setSearchQuery] = useState("")
+export function GalleryFilter({ 
+  activeLocation, 
+  setActiveLocation,
+  searchQuery,
+  setSearchQuery 
+}: { 
+  activeLocation: string, 
+  setActiveLocation: (loc: string) => void,
+  searchQuery: string,
+  setSearchQuery: (query: string) => void 
+}) {
+  const getSearchPlaceholder = () => {
+    if (activeLocation === "all") {
+      return "Search by location, event, or description..."
+    }
+    const location = locations.find(loc => loc.id === activeLocation)
+    return `Search in ${location?.name || ""} by event or description...`
+  }
 
   return (
     <div className="space-y-6">
@@ -32,7 +47,7 @@ export function GalleryFilter({ activeLocation, setActiveLocation }: { activeLoc
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500" />
           <Input
             type="search"
-            placeholder="Search gallery..."
+            placeholder={getSearchPlaceholder()}
             className="pl-8"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}

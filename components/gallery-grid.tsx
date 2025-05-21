@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 
 const ITEMS_PER_PAGE = 12
 
-export function GalleryGrid({ location = "all" }: { location?: string }) {
+export function GalleryGrid({ location = "all", searchQuery = "" }: { location?: string, searchQuery?: string }) {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
   const [currentPage, setCurrentPage] = useState(1)
 
@@ -16,10 +16,16 @@ export function GalleryGrid({ location = "all" }: { location?: string }) {
     setSelectedImage(imageId)
   }
 
-  // Filter images by location
-  const filteredImages = location === "all"
-    ? galleryImages
-    : galleryImages.filter(img => img.location.toLowerCase() === location.toLowerCase())
+  // Filter images by location and search query
+  const filteredImages = galleryImages.filter(img => {
+    const matchesLocation = location === "all" || img.location.toLowerCase() === location.toLowerCase()
+    const matchesSearch = searchQuery === "" || 
+      img.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      img.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      img.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      img.location.toLowerCase().includes(searchQuery.toLowerCase())
+    return matchesLocation && matchesSearch
+  })
 
   const totalPages = Math.ceil(filteredImages.length / ITEMS_PER_PAGE)
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE
@@ -38,8 +44,7 @@ export function GalleryGrid({ location = "all" }: { location?: string }) {
             onClick={() => handleImageClick(image.id)}
           >
             <Image
-              // src={image.src || "/placeholder.svg"}
-              src="/dummy-image.jpg" // Using dummy image
+              src={image.src || "/placeholder.svg"}
               alt={image.alt}
               fill
               className="object-cover hover:scale-105 transition-transform duration-300"
@@ -83,8 +88,7 @@ export function GalleryGrid({ location = "all" }: { location?: string }) {
             <>
               <div className="relative h-[500px] w-full">
                 <Image
-                  // src={selectedImageData.src || "/placeholder.svg"}
-                  src="/dummy-image.jpg" // Using dummy image
+                  src={selectedImageData.src || "/placeholder.svg"}
                   alt={selectedImageData.alt}
                   fill
                   className="object-contain"

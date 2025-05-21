@@ -10,8 +10,7 @@ export function GalleryPreview() {
       {previewImages.map((image) => (
         <div key={image.id} className="relative h-64 rounded-lg overflow-hidden">
           <Image
-            // src={image.src || "/placeholder.svg"}
-            src="/dummy-image.jpg" // Using dummy image
+            src={image.src || "/placeholder.svg"}
             alt={image.alt}
             fill
             className="object-cover hover:scale-105 transition-transform duration-300"

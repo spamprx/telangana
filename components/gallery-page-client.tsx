@@ -6,6 +6,7 @@ import { GalleryGrid } from "@/components/gallery-grid"
 
 export function GalleryPageClient() {
   const [activeLocation, setActiveLocation] = useState("all")
+  const [searchQuery, setSearchQuery] = useState("")
   return (
     <main className="flex flex-col min-h-screen">
       <section className="py-12 bg-white">
@@ -16,10 +17,15 @@ export function GalleryPageClient() {
             across Telangana.
           </p>
 
-          <GalleryFilter activeLocation={activeLocation} setActiveLocation={setActiveLocation} />
+          <GalleryFilter 
+            activeLocation={activeLocation} 
+            setActiveLocation={setActiveLocation}
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+          />
 
           <div className="mt-8">
-            <GalleryGrid location={activeLocation} />
+            <GalleryGrid location={activeLocation} searchQuery={searchQuery} />
           </div>
         </div>
       </section>

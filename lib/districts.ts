@@ -16,10 +16,6 @@ export interface District {
   carouselImages: string[] // Array of images for the carousel
 }
 
-// // Formatting function
-// export function formatEntries(entries: [string, string][]): string[] {
-//   return entries.map(([title, description]) => `<h3>${title}</h3>:\n${description}`);
-// }
 
 export const districts: District[] = [
   {
@@ -69,7 +65,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/hyderabad.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "120,150,180,200", // Placeholder coordinates
     carouselImages: [
@@ -126,7 +122,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/warangal.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "220,120,280,170", // Placeholder coordinates
     carouselImages: [
@@ -183,7 +179,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/karimnagar.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "180,80,240,130", // Placeholder coordinates
     carouselImages: [
@@ -240,7 +236,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/nizamabad.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "140,60,200,110", // Placeholder coordinates
     carouselImages: [
@@ -297,7 +293,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/khammam.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "260,180,320,230", // Placeholder coordinates
     carouselImages: [
@@ -354,7 +350,7 @@ export const districts: District[] = [
       ],
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/adilabad.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "160,40,220,90", // Placeholder coordinates
     carouselImages: [
@@ -411,7 +407,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/bhadradri.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "280,200,340,250", // Placeholder coordinates
     carouselImages: [
@@ -468,7 +464,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/hanumakonda.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "230,130,290,180", // Placeholder coordinates
     carouselImages: [
@@ -525,7 +521,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/jagtial.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "190,90,250,140", // Placeholder coordinates
     carouselImages: [
@@ -582,7 +578,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/jangaon.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "210,140,270,190", // Placeholder coordinates
     carouselImages: [
@@ -640,7 +636,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/jayashankar.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "200,110,260,160", // Placeholder coordinates
     carouselImages: [
@@ -697,7 +693,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/gadwal.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "150,220,210,270", // Placeholder coordinates
     carouselImages: [
@@ -754,7 +750,7 @@ export const districts: District[] = [
       ]
     ],  
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/kamareddy.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "130,70,190,120", // Placeholder coordinates
     carouselImages: [
@@ -811,7 +807,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/asifabad.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "170,30,230,80", // Placeholder coordinates
     carouselImages: [
@@ -868,7 +864,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/mahabubabad.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "240,160,300,210", // Placeholder coordinates
     carouselImages: [
@@ -877,7 +873,64 @@ export const districts: District[] = [
       "/districts/mahabubabad/forest.jpg",
       "/districts/mahabubabad/agriculture.jpg"
     ]
-  },  
+  },
+  {
+    id: 16,
+    slug: "mahbubnagar",
+    name: "Mahabubnagar",
+    description:
+      "Mahabubnagar is known for agriculture, particularly cotton and groundnut cultivation. The district has significant water resources and is focused on agricultural development and irrigation projects.",
+    population: "1,318,110",
+    area: "4,037 sq km",
+    headquarters: "Mahabubnagar",
+    majorTowns: ["Gadwal", "Wanaparthy", "Kollapur", "Nagarkurnool"],
+    issues: [
+      [
+        "Water resource management",
+        "Uneven distribution of water resources, over-extraction of groundwater, and inefficient irrigation systems affect agricultural productivity and sustainability."
+      ],
+      [
+        "Agricultural productivity",
+        "Low crop yields due to outdated farming practices, poor soil health, and limited access to modern agricultural technology and inputs."
+      ],
+      [
+        "Rural infrastructure",
+        "Inadequate road networks, electricity supply, and storage facilities in rural areas limit economic development and access to essential services."
+      ],
+      [
+        "Educational access",
+        "Limited availability of quality educational institutions, especially in rural areas, affects literacy rates and skill development."
+      ]
+    ],
+    initiatives: [
+      [
+        "Irrigation project expansion",
+        "Development of new irrigation projects and modernization of existing systems to improve water availability for agriculture."
+      ],
+      [
+        "Agricultural market development",
+        "Establishment of modern market yards and cold storage facilities to help farmers get better prices for their produce."
+      ],
+      [
+        "Rural road development",
+        "Construction and upgrading of rural roads to improve connectivity and access to markets and services."
+      ],
+      [
+        "Educational institution improvement",
+        "Upgrading existing schools and establishing new educational institutions to improve access to quality education."
+      ]
+    ],
+    coverImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/mahabubnagar.png",
+    thumbnail: "/dummy-image.jpg",
+    mapCoords: "130,190,190,240", // Placeholder coordinates
+    carouselImages: [
+      "/districts/mahabubnagar/city.jpg",
+      "/districts/mahabubnagar/temple.jpg",
+      "/districts/mahabubnagar/agriculture.jpg",
+      "/districts/mahabubnagar/lake.jpg"
+    ]
+  },
   {
     id: 17,
     slug: "mancherial",
@@ -925,7 +978,7 @@ export const districts: District[] = [
       ] 
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/mancherial.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "180,50,240,100", // Placeholder coordinates
     carouselImages: [
@@ -982,7 +1035,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/medak.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "110,120,170,170", // Placeholder coordinates
     carouselImages: [
@@ -1039,7 +1092,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/medchal.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "110,160,170,210", // Placeholder coordinates
     carouselImages: [
@@ -1096,7 +1149,7 @@ export const districts: District[] = [
       ],
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/mulugu.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "220,140,280,190", // Placeholder coordinates
     carouselImages: [
@@ -1153,7 +1206,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/nagarkurnool.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "170,210,230,260", // Keep existing coordinates
     carouselImages: [
@@ -1210,7 +1263,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/nalgonda.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "190,180,250,230", // Keep existing coordinates
     carouselImages: [
@@ -1267,7 +1320,7 @@ export const districts: District[] = [
       ],
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/narayanpet.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "140,230,200,280", // Placeholder coordinates
     carouselImages: [
@@ -1324,7 +1377,7 @@ export const districts: District[] = [
       ]
     ],    
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/nirmal.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "170,50,230,100", // Placeholder coordinates
     carouselImages: [
@@ -1381,7 +1434,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/peddapalli.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "190,70,250,120", // Placeholder coordinates
     carouselImages: [
@@ -1438,7 +1491,7 @@ export const districts: District[] = [
       ],
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/rajanna.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "180,90,240,140", // Placeholder coordinates
     carouselImages: [
@@ -1495,7 +1548,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/rangareddy.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "130,170,190,220", // Placeholder coordinates
     carouselImages: [
@@ -1552,7 +1605,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/sangareddy.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "100,130,160,180", // Placeholder coordinates
     carouselImages: [
@@ -1609,7 +1662,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/siddipet.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "140,110,200,160", // Placeholder coordinates
     carouselImages: [
@@ -1666,7 +1719,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/suryapet.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "210,170,270,220", // Keep existing coordinates
     carouselImages: [
@@ -1675,7 +1728,64 @@ export const districts: District[] = [
       "/districts/suryapet/agriculture.jpg",
       "/districts/suryapet/dairy.jpg"
     ]
-  },  
+  },
+  {
+    id: 31,
+    slug: "vikarabad",
+    name: "Vikarabad",
+    description:
+      "Vikarabad is known for its forests, wildlife sanctuaries, and agricultural production. The district has rich biodiversity and is developing its tourism potential while maintaining ecological balance.",
+    population: "927,140",
+    area: "3,386 sq km",
+    headquarters: "Vikarabad",
+    majorTowns: ["Tandur", "Dharur", "Bantwaram", "Doma"],
+    issues: [
+      [
+        "Forest conservation",
+        "Deforestation, illegal logging, and encroachment threaten forest ecosystems and wildlife habitats, requiring strict conservation measures."
+      ],
+      [
+        "Agricultural water management",
+        "Water scarcity and inefficient irrigation practices affect agricultural productivity, especially in drought-prone areas."
+      ],
+      [
+        "Tourism infrastructure",
+        "Limited tourism infrastructure and facilities hinder the development of eco-tourism and wildlife tourism potential."
+      ],
+      [
+        "Rural connectivity",
+        "Poor road networks and transport facilities in rural areas limit access to markets, healthcare, and educational services."
+      ]
+    ],
+    initiatives: [
+      [
+        "Wildlife sanctuary development",
+        "Development and maintenance of wildlife sanctuaries to protect biodiversity and promote eco-tourism."
+      ],
+      [
+        "Water conservation projects",
+        "Implementation of water harvesting structures and efficient irrigation systems to improve water availability."
+      ],
+      [
+        "Eco-tourism promotion",
+        "Development of eco-tourism infrastructure and promotion of responsible tourism practices."
+      ],
+      [
+        "Rural infrastructure improvement",
+        "Upgrading rural roads and basic amenities to improve connectivity and quality of life."
+      ]
+    ],
+    coverImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/vikarabad.png",
+    thumbnail: "/dummy-image.jpg",
+    mapCoords: "100,150,160,200", // Placeholder coordinates
+    carouselImages: [
+      "/districts/vikarabad/forest.jpg",
+      "/districts/vikarabad/wildlife.jpg",
+      "/districts/vikarabad/temple.jpg",
+      "/districts/vikarabad/city.jpg"
+    ]
+  }, 
   {
     id: 32,
     slug: "wanaparthy",
@@ -1723,7 +1833,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/wanaparthy.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "150,210,210,260", // Placeholder coordinates
     carouselImages: [
@@ -1780,7 +1890,7 @@ export const districts: District[] = [
       ]
     ],
     coverImage: "/dummy-image.jpg",
-    mapImage: "/dummy-image.jpg",
+    mapImage: "/administrativeMap/yadadri.png",
     thumbnail: "/dummy-image.jpg",
     mapCoords: "160,160,220,210", // Placeholder coordinates
     carouselImages: [
@@ -1789,7 +1899,7 @@ export const districts: District[] = [
       "/districts/yadadri/agriculture.jpg",
       "/districts/yadadri/lake.jpg"
     ]
-  },  
+  } 
 ];
 
 export function getDistrictData(slug: string): District | undefined {

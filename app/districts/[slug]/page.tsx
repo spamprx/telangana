@@ -154,7 +154,7 @@ export default function DistrictPage({ params }: { params: Promise<{ slug: strin
                 <div className="rounded-lg overflow-hidden">
                   <Image
                     // src={district.mapImage || "/placeholder.svg"}
-                    src="/dummy-image.jpg" // Using dummy image
+                    src={district.mapImage} // Using dummy image
                     alt={`Map of ${district.name} District`}
                     width={400}
                     height={400}
