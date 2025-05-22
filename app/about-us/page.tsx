@@ -36,12 +36,12 @@ const teamMembers: TeamMemberProps[] = [
     Her work has been recognized with several prestigious awards, including the National Heritage Conservation Award and the Telangana Cultural Excellence Award. Under her leadership, the organization has successfully documented over 500 traditional art forms and trained more than 1000 artisans in preserving their cultural heritage.`
   },
   {
-    name: "BS Murthy",
+    name: "BS Murty",
     role: "Project Director",
     description: "Strategic leader with extensive experience in cultural management and heritage preservation.",
     imageUrl: "/team/bs-murthy.jpg",
     isLeadership: true,
-    profileDetails: `BS Murthy is a seasoned cultural management expert with a proven track record in heritage preservation and community development. With a Master's in Cultural Management and over 15 years of experience, he has been at the forefront of several successful cultural initiatives.
+    profileDetails: `BS Murty is a seasoned cultural management expert with a proven track record in heritage preservation and community development. With a Master's in Cultural Management and over 15 years of experience, he has been at the forefront of several successful cultural initiatives.
 
     His key contributions include:
     • Strategic planning and implementation of cultural programs
@@ -113,7 +113,6 @@ const teamMembers: TeamMemberProps[] = [
     
     He has successfully designed and implemented several critical systems for cultural documentation and has been instrumental in ensuring the organization's technical infrastructure meets international standards.`
   },
-  // Design and Editing Team
   {
     name: "Deepthi Kanigiri",
     role: "Lead Content Creator",
@@ -155,7 +154,6 @@ const teamMembers: TeamMemberProps[] = [
 
     Whether it's through writing code, creating art, or having thoughtful conversations, I enjoy finding meaningful ways to connect with people and make a positive impact. I'm passionate about blending logic with creativity to understand the world better and maybe even change it a little.`
   },
-  // Web Team
   {
     name: "Praneeth Chamarthy",
     role: "Web Developer",
@@ -230,9 +228,12 @@ const teamMembers: TeamMemberProps[] = [
       linkedin: "https://linkedin.com/in/praneeth",
       github: "https://github.com/praneeth"
     },
-    profileDetails: "Charan is a passionate photographer with a love for Telangana's scenic beauty."
+    profileDetails: ` Hi! I’m G Sai Charan, a second-year Chemical Engineering student at IIT Hyderabad. I’m deeply passionate about both the world of chemical processes and the fast-paced realm of international trading—especially in currencies, commodities, and forex.
+
+With a growing foundation in chemical process calculations and core engineering subjects, I enjoy exploring how theoretical knowledge translates into real-world applications. At the same time, I’m fascinated by global markets and the strategies that drive international trade—an intersection where logic, analysis, and timing all come into play.
+
+When I’m not diving into equations or watching market trends, you’ll probably find me engaging in meaningful conversations, exploring new ideas, or just unwinding with music or a good read. Interested in exploring and solving real world problems.`
   }
-  // Photography Team
 
 
 ];
@@ -483,13 +484,10 @@ function LeadershipProfile({
       <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-orange-200 rounded-full opacity-10 blur-3xl"></div>
       
       <div className="relative bg-gradient-to-br from-white via-orange-50/50 to-orange-100/50 rounded-[2.5rem] shadow-2xl overflow-hidden border border-orange-100">
-        <div className="relative h-36 bg-gradient-to-r from-orange-400/90 to-orange-500/90">
+        <div className="relative h-24 bg-gradient-to-r from-orange-400/90 to-orange-500/90">
           <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-5"></div>
           <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-orange-500/90 to-transparent"></div>
           <div className="absolute bottom-4 left-6">
-            <div className="inline-block bg-white/20 backdrop-blur-sm text-white px-3 py-0.5 rounded-full text-xs font-semibold mb-1">
-              Leadership
-            </div>
             <h3 className="text-2xl font-bold text-white drop-shadow-lg">{name}</h3>
             <p className="text-base text-orange-50 font-medium">{role}</p>
           </div>
@@ -511,116 +509,76 @@ function LeadershipProfile({
                 </div>
               </div>
               
-              <div className="mt-12 bg-white/50 backdrop-blur-sm rounded-xl p-6 border border-orange-100">
-                <h4 className="text-lg font-semibold text-orange-700/90 m-4">Experience</h4>
-                <div className="space-y-4">
-                  {name === "Asha Latha" && (
-                    <>
-                      <div className="flex items-start">
-                        <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                          <svg className="w-4 h-4 text-orange-600/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <p className="text-gray-700">20+ years in cultural preservation</p>
+              {name === "Nagendra" && (
+                <div className="mt-12 bg-white/50 backdrop-blur-sm rounded-xl p-6 border border-orange-100">
+                  <h4 className="text-lg font-semibold text-orange-700/90 m-4">Experience</h4>
+                  <div className="space-y-4">
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                        <svg className="w-4 h-4 text-orange-600/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                        </svg>
                       </div>
-                      <div className="flex items-start">
-                        <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                          <svg className="w-4 h-4 text-orange-600/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <p className="text-gray-700">Ph.D. in Cultural Anthropology</p>
+                      <p className="text-gray-700">IIT Bombay B.Tech Alumnus</p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                        <svg className="w-4 h-4 text-orange-600/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                        </svg>
                       </div>
-                    </>
-                  )}
-                  {name === "BS Murthy" && (
-                    <>
-                      <div className="flex items-start">
-                        <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                          <svg className="w-4 h-4 text-orange-600/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <p className="text-gray-700">15+ years in cultural management</p>
+                      <p className="text-gray-700">Professional Cricketer</p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                        <svg className="w-4 h-4 text-orange-600/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                        </svg>
                       </div>
-                      <div className="flex items-start">
-                        <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                          <svg className="w-4 h-4 text-orange-600/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <p className="text-gray-700">Master's in Cultural Management</p>
-                      </div>
-                    </>
-                  )}
-                  {name === "Nagendra" && (
-                    <>
-                      <div className="flex items-start">
-                        <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                          <svg className="w-4 h-4 text-orange-600/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <p className="text-gray-700">IIT Bombay B.Tech Alumnus</p>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                          <svg className="w-4 h-4 text-orange-600/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <p className="text-gray-700">Professional Cricketer</p>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                          <svg className="w-4 h-4 text-orange-600/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <p className="text-gray-700">Development Advocate</p>
-                      </div>
-                    </>
-                  )}
+                      <p className="text-gray-700">Development Advocate</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
 
             <div className="lg:w-2/3">
-              <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 mb-6 border border-orange-100">
-                <h4 className="text-lg font-semibold text-orange-700/90 mb-3">Profile Overview</h4>
-                <p className="text-gray-700 leading-relaxed">{profileDetails}</p>
+              <div className="bg-white/50 backdrop-blur-sm rounded-xl p-8 mb-6 border border-orange-100">
+                <h4 className="text-xl font-semibold text-orange-700/90 mb-4">Profile Overview</h4>
+                <p className="text-gray-700 leading-relaxed text-lg whitespace-pre-line">{profileDetails}</p>
               </div>
-                    
-              <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 border border-orange-100">
-                <h4 className="text-lg font-semibold text-orange-700/90 mb-3">Key Achievements</h4>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                      <svg className="w-4 h-4 text-orange-600/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <p className="text-gray-700">Led successful preservation of 500+ traditional art forms</p>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                      <svg className="w-4 h-4 text-orange-600/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <p className="text-gray-700">Established 10+ cultural centers across Telangana</p>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                      <svg className="w-4 h-4 text-orange-600/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <p className="text-gray-700">Trained and mentored 1000+ artisans and cultural practitioners</p>
-                  </li>
-                </ul>
-              </div>
+              
+              {name === "Nagendra" && (
+                <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 border border-orange-100">
+                  <h4 className="text-lg font-semibold text-orange-700/90 mb-3">Key Achievements</h4>
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                        <svg className="w-4 h-4 text-orange-600/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <p className="text-gray-700">Led successful preservation of 500+ traditional art forms</p>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                        <svg className="w-4 h-4 text-orange-600/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <p className="text-gray-700">Established 10+ cultural centers across Telangana</p>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                        <svg className="w-4 h-4 text-orange-600/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <p className="text-gray-700">Trained and mentored 1000+ artisans and cultural practitioners</p>
+                    </li>
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -645,13 +603,13 @@ function CoHeadProfile({
       
       <div className="relative bg-gradient-to-br from-white via-orange-50/50 to-orange-100/50 rounded-2xl shadow-xl overflow-hidden border border-orange-200 group-hover:shadow-2xl transition-all duration-300">
         {/* Header Section - Reduced height */}
-        <div className="relative h-24 bg-gradient-to-r from-orange-300/90 to-orange-400/90">
+        <div className="relative h-16 bg-gradient-to-r from-orange-300/90 to-orange-400/90">
           <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-5"></div>
           <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-orange-400/90 to-transparent"></div>
           <div className="absolute bottom-2 left-4">
-            <div className="inline-block bg-white/20 backdrop-blur-sm text-white px-3 py-0.5 rounded-full text-xs font-semibold mb-1">
+            {/* <div className="inline-block bg-white/20 backdrop-blur-sm text-white px-3 py-0.5 rounded-full text-xs font-semibold mb-1">
               Technical Leadership
-            </div>
+            </div> */}
             <h3 className="text-xl font-bold text-white drop-shadow-lg">{name}</h3>
             <p className="text-sm text-orange-50 font-medium">{role}</p>
           </div>
@@ -745,7 +703,7 @@ export default function AboutUsPage() {
   return (
     <div className="container mx-auto px-4 py-10 md:py-16 bg-gradient-to-b from-gray-50 to-orange-50">
       <h1 className="text-4xl md:text-6xl font-bold mb-16 text-center bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">
-        Our Leadership Team
+        Our Inspiration
       </h1>
       <div className="max-w-7xl mx-auto">
         {/* Top Leadership Section */}
