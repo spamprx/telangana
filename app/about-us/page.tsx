@@ -228,11 +228,11 @@ const teamMembers: TeamMemberProps[] = [
       linkedin: "https://linkedin.com/in/praneeth",
       github: "https://github.com/praneeth"
     },
-    profileDetails: ` Hi! I’m G Sai Charan, a second-year Chemical Engineering student at IIT Hyderabad. I’m deeply passionate about both the world of chemical processes and the fast-paced realm of international trading—especially in currencies, commodities, and forex.
+    profileDetails: ` Hi! I'm G Sai Charan, a second-year Chemical Engineering student at IIT Hyderabad. I'm deeply passionate about both the world of chemical processes and the fast-paced realm of international trading—especially in currencies, commodities, and forex.
 
-With a growing foundation in chemical process calculations and core engineering subjects, I enjoy exploring how theoretical knowledge translates into real-world applications. At the same time, I’m fascinated by global markets and the strategies that drive international trade—an intersection where logic, analysis, and timing all come into play.
+With a growing foundation in chemical process calculations and core engineering subjects, I enjoy exploring how theoretical knowledge translates into real-world applications. At the same time, I'm fascinated by global markets and the strategies that drive international trade—an intersection where logic, analysis, and timing all come into play.
 
-When I’m not diving into equations or watching market trends, you’ll probably find me engaging in meaningful conversations, exploring new ideas, or just unwinding with music or a good read. Interested in exploring and solving real world problems.`
+When I'm not diving into equations or watching market trends, you'll probably find me engaging in meaningful conversations, exploring new ideas, or just unwinding with music or a good read. Interested in exploring and solving real world problems.`
   }
 
 
@@ -324,144 +324,146 @@ function ProfileDialog({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col animate-fadeIn relative">
-        {/* Header */}
-        <div className="relative h-40 bg-gradient-to-r from-orange-400 to-orange-500 flex-shrink-0 rounded-t-2xl">
-          <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-10"></div>
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition-colors"
-            aria-label="Close"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-          {/* Profile Image */}
-          <div className="absolute left-1/2 top-full -translate-x-1/2 -translate-y-1/2 z-20">
-            <div className="w-32 h-32 rounded-2xl overflow-hidden border-4 border-white shadow-xl bg-white">
-              <Image
-                src={member.imageUrl}
-                alt={member.name}
-                fill
-                style={{ objectFit: 'cover' }}
-              />
+        {/* Fixed Header Section */}
+        <div className="flex-shrink-0">
+          <div className="relative h-40 bg-gradient-to-r from-orange-400 to-orange-500 rounded-t-2xl">
+            <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-10"></div>
+            <button
+              onClick={onClose}
+              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition-colors z-20"
+              aria-label="Close"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          {/* Profile Image - Now part of the fixed header */}
+          <div className="relative h-20">
+            <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <div className="w-32 h-32 rounded-2xl overflow-hidden border-4 border-white shadow-xl bg-white">
+                <Image
+                  src={member.imageUrl}
+                  alt={member.name}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
             </div>
           </div>
         </div>
-        {/* Scrollable Content */}
-        <div className="flex-1 overflow-y-auto pt-20 px-6 pb-8">
-          {/* Add enough pt-20 to clear the image */}
-          <div className="relative px-6 pb-8">
+
+        {/* Scrollable Content with increased top padding */}
+        <div className="flex-1 overflow-y-auto">
+          <div className="px-6 pt-6">
             {/* Profile Info */}
-            <div className="pt-2">
-              <div className="flex flex-col md:flex-row md:items-end gap-6">
-                <div className="flex-1">
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900">{member.name}</h2>
-                  <p className="text-lg md:text-xl text-orange-600 font-medium mt-1">{member.role}</p>
+            <div className="flex flex-col md:flex-row md:items-end gap-6">
+              <div className="flex-1 text-center md:text-left">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900">{member.name}</h2>
+                <p className="text-lg md:text-xl text-orange-600 font-medium mt-1">{member.role}</p>
+              </div>
+              {member.socialLinks && (
+                <div className="flex gap-3 justify-center md:justify-start">
+                  {member.socialLinks.twitter && (
+                    <a href={member.socialLinks.twitter} target="_blank" rel="noopener noreferrer" 
+                      className="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-orange-600 hover:bg-orange-100 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84" />
+                      </svg>
+                    </a>
+                  )}
+                  {member.socialLinks.linkedin && (
+                    <a href={member.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" 
+                      className="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-orange-600 hover:bg-orange-100 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clipRule="evenodd" />
+                      </svg>
+                    </a>
+                  )}
+                  {member.socialLinks.github && (
+                    <a href={member.socialLinks.github} target="_blank" rel="noopener noreferrer" 
+                      className="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-orange-600 hover:bg-orange-100 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 0C4.477 0 0 4.477 0 10c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.087.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0110 4.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.933.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C17.14 18.163 20 14.418 20 10c0-5.523-4.477-10-10-10z" />
+                      </svg>
+                    </a>
+                  )}
                 </div>
-                {member.socialLinks && (
-                  <div className="flex gap-3">
-                    {member.socialLinks.twitter && (
-                      <a href={member.socialLinks.twitter} target="_blank" rel="noopener noreferrer" 
-                        className="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-orange-600 hover:bg-orange-100 transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                          <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84" />
-                        </svg>
-                      </a>
-                    )}
-                    {member.socialLinks.linkedin && (
-                      <a href={member.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" 
-                        className="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-orange-600 hover:bg-orange-100 transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clipRule="evenodd" />
-                        </svg>
-                      </a>
-                    )}
-                    {member.socialLinks.github && (
-                      <a href={member.socialLinks.github} target="_blank" rel="noopener noreferrer" 
-                        className="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-orange-600 hover:bg-orange-100 transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                          <path d="M10 0C4.477 0 0 4.477 0 10c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.087.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0110 4.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.933.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C17.14 18.163 20 14.418 20 10c0-5.523-4.477-10-10-10z" />
-                        </svg>
-                      </a>
-                    )}
-                  </div>
-                )}
+              )}
+            </div>
+
+            {/* Profile Details */}
+            <div className="mt-8 space-y-6 pb-6">
+              <div className="bg-orange-50/50 rounded-xl p-6 border border-orange-100">
+                <h3 className="text-lg font-semibold text-orange-700 mb-3">About</h3>
+                <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                  {member.profileDetails || member.description}
+                </p>
               </div>
 
-              {/* Profile Details */}
-              <div className="mt-8 space-y-6">
-                <div className="bg-orange-50/50 rounded-xl p-6 border border-orange-100">
-                  <h3 className="text-lg font-semibold text-orange-700 mb-3">About</h3>
-                  <p className="text-gray-700 leading-relaxed whitespace-pre-line">
-                    {member.profileDetails || member.description}
-                  </p>
-                </div>
-
-                {member.isLeadership && (
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-orange-50/50 rounded-xl p-6 border border-orange-100">
-                      <h3 className="text-lg font-semibold text-orange-700 mb-3">Key Responsibilities</h3>
-                      <ul className="space-y-3">
-                        <li className="flex items-start">
-                          <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                            <svg className="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                          </div>
-                          <p className="text-gray-700">Strategic planning and implementation</p>
-                        </li>
-                        <li className="flex items-start">
-                          <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                            <svg className="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                          </div>
-                          <p className="text-gray-700">Team leadership and mentorship</p>
-                        </li>
-                        <li className="flex items-start">
-                          <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                            <svg className="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                          </div>
-                          <p className="text-gray-700">Project oversight and management</p>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div className="bg-orange-50/50 rounded-xl p-6 border border-orange-100">
-                      <h3 className="text-lg font-semibold text-orange-700 mb-3">Achievements</h3>
-                      <ul className="space-y-3">
-                        <li className="flex items-start">
-                          <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                            <svg className="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                          </div>
-                          <p className="text-gray-700">Led successful cultural preservation initiatives</p>
-                        </li>
-                        <li className="flex items-start">
-                          <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                            <svg className="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                          </div>
-                          <p className="text-gray-700">Established community development programs</p>
-                        </li>
-                        <li className="flex items-start">
-                          <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                            <svg className="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                          </div>
-                          <p className="text-gray-700">Received recognition for outstanding contributions</p>
-                        </li>
-                      </ul>
-                    </div>
+              {member.isLeadership && (
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-orange-50/50 rounded-xl p-6 border border-orange-100">
+                    <h3 className="text-lg font-semibold text-orange-700 mb-3">Key Responsibilities</h3>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                          <svg className="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <p className="text-gray-700">Strategic planning and implementation</p>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                          <svg className="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <p className="text-gray-700">Team leadership and mentorship</p>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                          <svg className="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <p className="text-gray-700">Project oversight and management</p>
+                      </li>
+                    </ul>
                   </div>
-                )}
-              </div>
+
+                  <div className="bg-orange-50/50 rounded-xl p-6 border border-orange-100">
+                    <h3 className="text-lg font-semibold text-orange-700 mb-3">Achievements</h3>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                          <svg className="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <p className="text-gray-700">Led successful cultural preservation initiatives</p>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                          <svg className="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <p className="text-gray-700">Established community development programs</p>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                          <svg className="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <p className="text-gray-700">Received recognition for outstanding contributions</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -2,11 +2,11 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft, ChevronDown } from "lucide-react"
+import { ArrowLeft, ChevronDown, ZoomIn, ZoomOut } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { getDistrictData } from "@/lib/districts"
 import useEmblaCarousel from 'embla-carousel-react'
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import { use } from 'react'
 import {
   Accordion,
@@ -14,6 +14,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { Dialog, DialogContent } from "@/components/ui/dialog"
+import { galleryImages } from "@/lib/gallery"
 
 function Carousel({ images }: { images: string[] }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
@@ -61,6 +63,21 @@ function Carousel({ images }: { images: string[] }) {
 export default function DistrictPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = use(params)
   const district = getDistrictData(resolvedParams.slug)
+  const [showMapDialog, setShowMapDialog] = useState(false)
+  const [zoomLevel, setZoomLevel] = useState(1)
+
+  // Filter gallery images for this district
+  const districtPhotos = galleryImages.filter(
+    photo => photo.location.toLowerCase() === district?.name.toLowerCase()
+  ).slice(0, 4) // Get up to 4 photos
+
+  const handleZoomIn = () => {
+    setZoomLevel(prev => Math.min(prev + 0.2, 3))
+  }
+
+  const handleZoomOut = () => {
+    setZoomLevel(prev => Math.max(prev - 0.2, 0.5))
+  }
 
   if (!district) {
     return (
@@ -151,10 +168,9 @@ export default function DistrictPage({ params }: { params: Promise<{ slug: strin
                   </ul>
                 </div>
 
-                <div className="rounded-lg overflow-hidden">
+                <div className="rounded-lg overflow-hidden cursor-pointer" onClick={() => setShowMapDialog(true)}>
                   <Image
-                    // src={district.mapImage || "/placeholder.svg"}
-                    src={district.mapImage} // Using dummy image
+                    src={district.mapImage}
                     alt={`Map of ${district.name} District`}
                     width={400}
                     height={400}
@@ -162,8 +178,93 @@ export default function DistrictPage({ params }: { params: Promise<{ slug: strin
                   />
                 </div>
               </div>
+
+              <Dialog open={showMapDialog} onOpenChange={setShowMapDialog}>
+                <DialogContent className="sm:max-w-[90vw] h-[90vh] p-0">
+                  <div className="absolute right-4 top-4 z-20">
+                    <button
+                      className="rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
+                      onClick={() => setShowMapDialog(false)}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                      <span className="sr-only">Close</span>
+                    </button>
+                  </div>
+                  <div className="relative w-full h-full overflow-auto">
+                    <div className="absolute bottom-4 right-4 flex gap-2 z-10">
+                      <Button
+                        variant="secondary"
+                        size="icon"
+                        onClick={handleZoomIn}
+                        className="bg-white/80 hover:bg-white shadow-md"
+                      >
+                        <ZoomIn className="h-4 w-4" />
+                      </Button>
+                      <Button
+                        variant="secondary"
+                        size="icon"
+                        onClick={handleZoomOut}
+                        className="bg-white/80 hover:bg-white shadow-md"
+                      >
+                        <ZoomOut className="h-4 w-4" />
+                      </Button>
+                    </div>
+                    <div style={{ transform: `scale(${zoomLevel})`, transformOrigin: 'top left', transition: 'transform 0.2s' }}>
+                      <Image
+                        src={district.mapImage}
+                        alt={`Map of ${district.name} District`}
+                        width={1200}
+                        height={1200}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Photos Section */}
+      <section className="py-12 bg-gray-50">
+        <div className="container px-4 md:px-6">
+          <div className="flex justify-between items-center mb-8">
+            <h2 className="text-2xl font-bold">Photos from {district.name}</h2>
+            <Button asChild>
+              <Link href={`/gallery?location=${district.name.toLowerCase()}`}>
+                View All Photos
+              </Link>
+            </Button>
+          </div>
+
+          {districtPhotos.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {districtPhotos.map((photo) => (
+                <div key={photo.id} className="relative h-48 rounded-lg overflow-hidden group">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                      <h3 className="text-sm font-medium">{photo.title}</h3>
+                      <p className="text-xs opacity-80">{photo.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-8 text-gray-500">
+              No photos available for this district yet.
+            </div>
+          )}
         </div>
       </section>
     </main>
