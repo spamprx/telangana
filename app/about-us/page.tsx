@@ -18,7 +18,6 @@ interface TeamMemberProps {
 }
 
 const teamMembers: TeamMemberProps[] = [
-  // Leadership (with enhanced card)
   {
     name: "Asha Latha",
     role: "Project Director",
@@ -216,8 +215,6 @@ const teamMembers: TeamMemberProps[] = [
     
   },
 
-
-  // Management Team
   {
     name: "Charan",
     role: "Management Team",
