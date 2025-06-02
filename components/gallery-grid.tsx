@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { galleryImages } from "@/lib/gallery"
@@ -11,6 +11,11 @@ const ITEMS_PER_PAGE = 12
 export function GalleryGrid({ location = "all", searchQuery = "" }: { location?: string, searchQuery?: string }) {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
   const [currentPage, setCurrentPage] = useState(1)
+
+  // Scroll to top when page changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [currentPage])
 
   const handleImageClick = (imageId: number) => {
     setSelectedImage(imageId)

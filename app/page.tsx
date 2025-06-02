@@ -4,10 +4,9 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { EventCard } from "@/components/event-card"
 import { GalleryPreview } from "@/components/gallery-preview"
 import { DistrictMap } from "@/components/district-map"
-import { useRef, useState } from "react"
+import { useRef, useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
 import {
   Dialog,
@@ -16,6 +15,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import { heroSection } from "@/lib/heroSection"
 
 const navLinks = [
   { href: "/districts", label: "Districts" },
@@ -141,6 +141,7 @@ const priorityDetails = {
 
 export default function Home() {
   const mapRef = useRef<HTMLElement | null>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const scrollToMap = () => {
     if (mapRef.current) {
@@ -148,19 +149,61 @@ export default function Home() {
     }
   };
 
+  // Auto-advance slideshow
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSection.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <main className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center">
+      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+        {/* Slideshow */}
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/hero-telangana.png"
-            alt="Telangana Landscape"
-            fill
-            className="object-cover brightness-[0.6]"
-            priority
-          />
+          {heroSection.map((site, index) => (
+            <div
+              key={site.id}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                index === currentSlide ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <Image
+                src={site.imageUrl}
+                alt={site.title}
+                fill
+                className="object-cover brightness-[0.6]"
+                priority={index === 0}
+              />
+            </div>
+          ))}
         </div>
+        
+        {/* Slide indicators */}
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          {heroSection.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-2 h-2 rounded-full transition-all ${
+                index === currentSlide 
+                  ? 'bg-white w-8' 
+                  : 'bg-white/50 hover:bg-white/75'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+
+        {/* Current slide info */}
+        <div className="absolute bottom-20 left-10 text-white z-20 max-w-sm">
+          <h3 className="text-xl font-semibold mb-1">{heroSection[currentSlide].title}</h3>
+          <p className="text-sm opacity-90">{heroSection[currentSlide].location}</p>
+        </div>
+
         <div className="container relative z-10 px-4 md:px-6 text-center text-white">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">Discover Telangana</h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
@@ -176,7 +219,7 @@ export default function Home() {
               variant="outline"
               className="bg-transparent text-white border-white hover:bg-white/10"
             >
-              <Link href="/events">View Events</Link>
+              <Link href="/heritage">View Heritage</Link>
             </Button>
           </div>
         </div>

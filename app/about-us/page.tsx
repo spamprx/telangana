@@ -322,8 +322,14 @@ function ProfileDialog({
 
   if (!open || !member) return null;
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col animate-fadeIn relative">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+      onClick={onClose}
+    >
+      <div
+        className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col animate-fadeIn relative"
+        onClick={e => e.stopPropagation()}
+      >
         {/* Fixed Header Section */}
         <div className="flex-shrink-0">
           <div className="relative h-40 bg-gradient-to-r from-orange-400 to-orange-500 rounded-t-2xl">
@@ -341,7 +347,7 @@ function ProfileDialog({
           {/* Profile Image - Now part of the fixed header */}
           <div className="relative h-20">
             <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2">
-              <div className="w-32 h-32 rounded-2xl overflow-hidden border-4 border-white shadow-xl bg-white">
+              <div className="w-40 h-40 rounded-2xl overflow-hidden border-4 border-white shadow-xl bg-white">
                 <Image
                   src={member.imageUrl}
                   alt={member.name}
