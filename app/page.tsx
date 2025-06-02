@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { GalleryPreview } from "@/components/gallery-preview"
 import { DistrictMap } from "@/components/district-map"
@@ -181,6 +181,22 @@ export default function Home() {
             </div>
           ))}
         </div>
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={() => setCurrentSlide((prev) => (prev - 1 + heroSection.length) % heroSection.length)}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/30 hover:bg-black/50 text-white transition-all duration-300 group"
+          aria-label="Previous slide"
+        >
+          <ArrowLeft className="w-8 h-8 group-hover:scale-110 transition-transform" />
+        </button>
+        <button
+          onClick={() => setCurrentSlide((prev) => (prev + 1) % heroSection.length)}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/30 hover:bg-black/50 text-white transition-all duration-300 group"
+          aria-label="Next slide"
+        >
+          <ArrowRight className="w-8 h-8 group-hover:scale-110 transition-transform" />
+        </button>
         
         {/* Slide indicators */}
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
