@@ -6,7 +6,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { galleryImages } from "@/lib/gallery"
 import { Button } from "@/components/ui/button"
 
-const ITEMS_PER_PAGE = 12
+const ITEMS_PER_PAGE = 16
 
 export function GalleryGrid({ location = "all", searchQuery = "" }: { location?: string, searchQuery?: string }) {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
@@ -100,10 +100,10 @@ export function GalleryGrid({ location = "all", searchQuery = "" }: { location?:
                 />
               </div>
               <DialogHeader className="p-4">
-                <DialogTitle>{selectedImageData.title}</DialogTitle>
+                {/* <DialogTitle>{selectedImageData.title}</DialogTitle>*/
                 <DialogDescription>
                   {selectedImageData.description}
-                </DialogDescription>
+                </DialogDescription> }
                 <div className="mt-2 flex flex-wrap gap-2">
                   <span className="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded-full">
                     {selectedImageData.category}

@@ -13,7 +13,12 @@ export const metadata: Metadata = {
     template: "%s - Telangana - Political & Geographical Portal"
   },
   description: "Explore Telangana's districts, events, and political landscape",
-  generator: "v0.dev"
+  generator: "v0.dev",
+  icons: {
+    icon: '/logo.svg',
+    shortcut: '/logo.svg',
+    apple: '/logo.svg',
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -1,11 +1,11 @@
-import { Metadata } from "next"
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { heritageSites, HeritageSite } from "../../lib/heritageData"
-
-export const metadata = {
-  title: "Heritage"
-};
+import { Input } from "@/components/ui/input"
+import { Search } from "lucide-react"
+import { useState } from "react"
 
 interface HeritageCardProps {
   site: HeritageSite;
@@ -16,13 +16,21 @@ export default function HeritagePage({
 }: {
   searchParams: { page?: string; category?: string };
 }) {
+  const [searchQuery, setSearchQuery] = useState("");
   const currentPage = Number(searchParams.page) || 1;
   const itemsPerPage = 6;
   const selectedCategory = searchParams.category;
 
-  const filteredSites = selectedCategory
-    ? heritageSites.filter(site => site.category === selectedCategory)
-    : heritageSites;
+  // Filter sites based on category and search query
+  const filteredSites = heritageSites
+    .filter(site => {
+      const matchesCategory = !selectedCategory || site.category === selectedCategory;
+      const matchesSearch = !searchQuery || 
+        site.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        site.location.toLowerCase().includes(searchQuery.toLowerCase());
+      return matchesCategory && matchesSearch;
+    })
+    .sort((a, b) => a.title.localeCompare(b.title)); // Sort alphabetically by title
 
   const totalPages = Math.ceil(filteredSites.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -40,6 +48,20 @@ export default function HeritagePage({
           Telangana is home to a rich tapestry of cultural and historical landmarks that reflect its diverse heritage.
           From ancient temples to magnificent forts and palaces, the state preserves centuries of history and tradition.
         </p>
+      </div>
+
+      {/* Search Bar */}
+      <div className="max-w-md mx-auto mb-8">
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-500" />
+          <Input
+            type="search"
+            placeholder="Search heritage sites..."
+            className="pl-10"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
       </div>
 
       {/* Category Filter */}

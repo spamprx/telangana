@@ -4,6 +4,13 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Search } from "lucide-react"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 // const categories = [
 //   { id: "all", name: "All Photos" },
@@ -15,10 +22,39 @@ import { Search } from "lucide-react"
 
 const locations = [
   { id: "all", name: "All Locations" },
+  { id: "adilabad", name: "Adilabad" },
+  { id: "bhadradri-kothagudem", name: "Bhadradri Kothagudem" },
+  { id: "hanumakonda", name: "Hanumakonda" },
   { id: "hyderabad", name: "Hyderabad" },
-  { id: "warangal", name: "Warangal" },
+  { id: "jagitial", name: "Jagitial" },
+  { id: "jangaon", name: "Jangaon" },
+  { id: "jayashankar-bhupalpally", name: "Jayashankar Bhupalpally" },
+  { id: "jogulamba-gadwal", name: "Jogulamba Gadwal" },
+  { id: "kamareddy", name: "Kamareddy" },
   { id: "karimnagar", name: "Karimnagar" },
+  { id: "khammam", name: "Khammam" },
+  { id: "komaram-bheem-asifabad", name: "Komaram Bheem Asifabad" },
+  { id: "mahabubabad", name: "Mahabubabad" },
+  { id: "mahabubnagar", name: "Mahabubnagar" },
+  { id: "mancherial", name: "Mancherial" },
+  { id: "medak", name: "Medak" },
+  { id: "medchal-malkajgiri", name: "Medchal–Malkajgiri" },
+  { id: "mulugu", name: "Mulugu" },
+  { id: "nagarkurnool", name: "Nagarkurnool" },
+  { id: "nalgonda", name: "Nalgonda" },
+  { id: "narayanpet", name: "Narayanpet" },
+  { id: "nirmal", name: "Nirmal" },
   { id: "nizamabad", name: "Nizamabad" },
+  { id: "peddapalli", name: "Peddapalli" },
+  { id: "rajanna-sircilla", name: "Rajanna Sircilla" },
+  { id: "ranga-reddy", name: "Ranga Reddy" },
+  { id: "sangareddy", name: "Sangareddy" },
+  { id: "siddipet", name: "Siddipet" },
+  { id: "suryapet", name: "Suryapet" },
+  { id: "vikarabad", name: "Vikarabad" },
+  { id: "wanaparthy", name: "Wanaparthy" },
+  { id: "warangal", name: "Warangal" },
+  { id: "yadadri-bhuvanagiri", name: "Yadadri Bhuvanagiri" }
 ]
 
 export function GalleryFilter({ 
@@ -75,19 +111,18 @@ export function GalleryFilter({
 
         <div>
           <h3 className="text-sm font-medium mb-2">Location</h3>
-          <div className="flex flex-wrap gap-2">
-            {locations.map((location) => (
-              <Button
-                key={location.id}
-                variant={activeLocation === location.id ? "default" : "outline"}
-                size="sm"
-                onClick={() => setActiveLocation(location.id)}
-                className={activeLocation === location.id ? "bg-orange-600 hover:bg-orange-700" : ""}
-              >
-                {location.name}
-              </Button>
-            ))}
-          </div>
+          <Select value={activeLocation} onValueChange={setActiveLocation}>
+            <SelectTrigger className="w-[280px]">
+              <SelectValue placeholder="Select a location" />
+            </SelectTrigger>
+            <SelectContent>
+              {locations.map((location) => (
+                <SelectItem key={location.id} value={location.id}>
+                  {location.name}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
       </div>
     </div>
