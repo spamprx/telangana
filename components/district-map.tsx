@@ -128,10 +128,10 @@ export function DistrictMap() {
             svgElement.setAttribute('width', '100%')
             svgElement.setAttribute('height', '100%')
             svgElement.setAttribute('preserveAspectRatio', 'xMidYMid meet')
-            svgElement.setAttribute('viewBox', '0 0 1000 1000')
+            svgElement.setAttribute('viewBox', '-50 -50 1000 1000')
             svgElement.style.display = 'block'
             svgElement.style.margin = '0 auto'
-            svgElement.style.maxHeight = '60vh'
+            svgElement.style.maxHeight = '85vh'
             svgElement.style.maxWidth = '100%'
           }
           
@@ -185,7 +185,7 @@ export function DistrictMap() {
           </div>
         )}
         
-        <div className="svg-container relative w-full" style={{ height: "60vh", overflow: "hidden" }}>
+        <div className="svg-container relative w-full" style={{ height: "85vh", overflow: "hidden" }}>
           {isLoading && (
             <div className="absolute inset-0 flex items-center justify-center bg-gray-50">
               <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-blue-500"></div>

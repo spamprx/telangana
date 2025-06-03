@@ -20,33 +20,35 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white">
-      <div className="container flex h-24 items-center px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-4">
+      <div className="w-full flex h-24 items-center justify-between px-8">
+        <Link href="/" className="flex items-center gap-2">
           <Image 
-            src="/dummy-image.jpg" 
+            src="/logo.svg" 
             alt="Telangana Emblem" 
-            width={60} 
-            height={60} 
+            width={80} 
+            height={80} 
             className="object-contain"
           />
-          <span className="text-2xl font-bold font-serif text-orange-600 tracking-wide">Jai Telangana</span>
+          <span className="text-3xl font-bold font-serif text-orange-600 tracking-wide">Jai Telangana</span>
         </Link>
 
-        <nav className="hidden md:flex ml-auto gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`
-                text-base font-medium pb-1
-                text-black
-                ${pathname === link.href ? "border-b-2 border-orange-600" : "border-b-2 border-transparent hover:border-orange-600"}
-                transition-all duration-150 ease-in-out
-              `}
-            >
-              {link.label}
-            </Link>
-          ))}
+        <nav className="hidden md:flex items-center">
+          <div className="flex items-center justify-end gap-10">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`
+                  text-base font-medium pb-1
+                  text-gray-800 hover:text-orange-600
+                  ${pathname === link.href ? "border-b-2 border-orange-600" : "border-b-2 border-transparent hover:border-orange-600"}
+                  transition-all duration-150 ease-in-out
+                `}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </nav>
 
         <button className="ml-auto md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>

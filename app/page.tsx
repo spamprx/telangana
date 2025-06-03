@@ -149,11 +149,10 @@ export default function Home() {
     }
   };
 
-  // Auto-advance slideshow
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSection.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 5000); 
 
     return () => clearInterval(timer);
   }, []);
@@ -257,13 +256,13 @@ export default function Home() {
                 growth story and help build a prosperous future for all 33 districts.
               </p>
             </div>
-            <div className="relative h-[400px] rounded-lg overflow-hidden">
+            <div className="relative aspect-square w-[400px] mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
               <Image 
-                // src="/about-telangana.jpg" 
-                src="/dummy-image.jpg" // Using dummy image
+                src="/logo.svg"
                 alt="Telangana Culture" 
                 fill 
-                className="object-cover" 
+                className="object-contain p-12 bg-gradient-to-br from-orange-50 via-white to-orange-100" 
+                priority
               />
             </div>
           </div>
