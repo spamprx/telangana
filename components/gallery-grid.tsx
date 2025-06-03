@@ -61,20 +61,73 @@ export function GalleryGrid({ location = "all", searchQuery = "" }: { location?:
 
       {/* Pagination Controls */}
       <div className="mt-8 flex justify-center items-center gap-2">
-        {Array.from({ length: Math.min(10, totalPages) }, (_, i) => i + 1).map((pageNum) => (
+        {/* First page */}
+        <Button
+          variant={currentPage === 1 ? "default" : "outline"}
+          size="sm"
+          className={`w-10 h-10 ${
+            currentPage === 1 ? "bg-primary text-primary-foreground" : "text-gray-600"
+          }`}
+          onClick={() => setCurrentPage(1)}
+        >
+          1
+        </Button>
+
+        {/* Show dots after first page if needed */}
+        {currentPage > 4 && (
+          <span className="px-2">...</span>
+        )}
+
+        {/* Pages around current page */}
+        {Array.from({ length: totalPages }, (_, i) => i + 1)
+          .filter(pageNum => {
+            if (pageNum === 1 || pageNum === totalPages) return false;
+            return Math.abs(pageNum - currentPage) <= 2;
+          })
+          .map((pageNum) => (
+            <Button
+              key={pageNum}
+              variant={currentPage === pageNum ? "default" : "outline"}
+              size="sm"
+              className={`w-10 h-10 ${
+                currentPage === pageNum ? "bg-primary text-primary-foreground" : "text-gray-600"
+              }`}
+              onClick={() => setCurrentPage(pageNum)}
+            >
+              {pageNum}
+            </Button>
+          ))}
+
+        {/* Show dots before last page if needed */}
+        {currentPage < totalPages - 3 && (
+          <span className="px-2">...</span>
+        )}
+
+        {/* Last page */}
+        {totalPages > 1 && (
           <Button
-            key={pageNum}
-            variant={currentPage === pageNum ? "default" : "outline"}
+            variant={currentPage === totalPages ? "default" : "outline"}
             size="sm"
             className={`w-10 h-10 ${
-              currentPage === pageNum ? "bg-primary text-primary-foreground" : "text-gray-600"
+              currentPage === totalPages ? "bg-primary text-primary-foreground" : "text-gray-600"
             }`}
-            onClick={() => setCurrentPage(pageNum)}
+            onClick={() => setCurrentPage(totalPages)}
           >
-            {pageNum}
+            {totalPages}
           </Button>
-        ))}
-        {totalPages > 10 && (
+        )}
+
+        {/* Navigation buttons */}
+        <div className="flex gap-2 ml-2">
+          <Button
+            variant="outline"
+            size="sm"
+            className="px-4 h-10"
+            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
+          >
+            Prev
+          </Button>
           <Button
             variant="outline"
             size="sm"
@@ -84,7 +137,7 @@ export function GalleryGrid({ location = "all", searchQuery = "" }: { location?:
           >
             Next
           </Button>
-        )}
+        </div>
       </div>
 
       <Dialog open={selectedImage !== null} onOpenChange={(open) => !open && setSelectedImage(null)}>
