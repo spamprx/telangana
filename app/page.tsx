@@ -16,6 +16,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { heroSection } from "@/lib/heroSection"
+import { useSwipeable } from "react-swipeable"
 
 const navLinks = [
   { href: "/districts", label: "Districts" },
@@ -157,10 +158,19 @@ export default function Home() {
     return () => clearInterval(timer);
   }, []);
 
+  const handlers = useSwipeable({
+    onSwipedLeft: () => setCurrentSlide((prev) => (prev + 1) % heroSection.length),
+    onSwipedRight: () => setCurrentSlide((prev) => (prev - 1 + heroSection.length) % heroSection.length),
+    trackMouse: true,
+  });
+
   return (
     <main className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+      <section
+        className="relative h-[80vh] flex items-center justify-center overflow-hidden"
+        {...handlers}
+      >
         {/* Slideshow */}
         <div className="absolute inset-0 z-0">
           {heroSection.map((site, index) => (
@@ -181,17 +191,17 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Navigation Arrows */}
+        {/* Navigation Arrows (Desktop only) */}
         <button
           onClick={() => setCurrentSlide((prev) => (prev - 1 + heroSection.length) % heroSection.length)}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/30 hover:bg-black/50 text-white transition-all duration-300 group"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/30 hover:bg-black/50 text-white transition-all duration-300 group hidden md:block"
           aria-label="Previous slide"
         >
           <ArrowLeft className="w-8 h-8 group-hover:scale-110 transition-transform" />
         </button>
         <button
           onClick={() => setCurrentSlide((prev) => (prev + 1) % heroSection.length)}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/30 hover:bg-black/50 text-white transition-all duration-300 group"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/30 hover:bg-black/50 text-white transition-all duration-300 group hidden md:block"
           aria-label="Next slide"
         >
           <ArrowRight className="w-8 h-8 group-hover:scale-110 transition-transform" />
@@ -219,7 +229,8 @@ export default function Home() {
           <p className="text-sm opacity-90">{heroSection[currentSlide].location}</p>
         </div>
 
-        <div className="container relative z-10 px-4 md:px-6 text-center text-white">
+        {/* Buttons (Desktop only) */}
+        <div className="container relative z-10 px-4 md:px-6 text-center text-white hidden md:block">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">Discover Telangana</h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
             Exploring the rich heritage, vibrant culture, and political landscape of India's youngest state
@@ -239,6 +250,23 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Buttons (Mobile only, above Moto) */}
+      <div className="block md:hidden w-full px-4 mt-4 mb-8">
+        <div className="bg-white rounded-2xl shadow-md p-4 flex flex-col gap-4">
+          <Button size="lg" className="bg-orange-600 hover:bg-orange-700 w-full" onClick={scrollToMap}>
+            Explore State
+          </Button>
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="w-full border-orange-600 text-orange-600 hover:bg-orange-50"
+          >
+            <Link href="/heritage">View Heritage</Link>
+          </Button>
+        </div>
+      </div>
 
       {/* About Us Section */}
       <section className="py-16 bg-white">
@@ -788,7 +816,7 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Employment</h3>
+                    <h3 className="text-2xl font-bold text-white mb-2">Youth Empowerment</h3>
                     <p className="text-white/90 text-sm">Jobs & skill development</p>
                     <div className="mt-4 flex items-center text-white/80 text-sm">
                       <span>Learn more</span>

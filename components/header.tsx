@@ -12,6 +12,7 @@ const navLinks = [
   { href: "/gallery", label: "Gallery" },
   { href: "/heritage", label: "Heritage" },
   { href: "/about-us", label: "About Us" },
+  { href: "/contact", label: "Contact" },
 ]
 
 export function Header() {
@@ -25,11 +26,11 @@ export function Header() {
           <Image 
             src="/logo.svg" 
             alt="Telangana Emblem" 
-            width={80} 
-            height={80} 
+            width={60} 
+            height={60} 
             className="object-contain"
           />
-          <span className="text-3xl font-bold font-serif text-orange-600 tracking-wide">Jai Telangana</span>
+          <span className="font-bold font-serif text-orange-600 tracking-wide text-xl md:text-3xl">Jai Telangana</span>
         </Link>
 
         <nav className="hidden md:flex items-center">

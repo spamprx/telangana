@@ -20,7 +20,7 @@ interface TeamMemberProps {
 const teamMembers: TeamMemberProps[] = [
   {
     name: "Asha Latha",
-    role: "Project Director",
+    //role: "Head of Project",
     description: "Visionary leader with 20+ years of experience in cultural preservation and community development.",
     imageUrl: "/team/ashalatha.jpeg",
     isLeadership: true,
@@ -36,7 +36,7 @@ const teamMembers: TeamMemberProps[] = [
   },
   {
     name: "BS Murty",
-    role: "Project Director",
+    //role: "Head of Project",
     description: "Strategic leader with extensive experience in cultural management and heritage preservation.",
     imageUrl: "/team/bs-murthy.jpg",
     isLeadership: true,
@@ -52,7 +52,7 @@ const teamMembers: TeamMemberProps[] = [
   },
   {
     name: "Nagendra",
-    role: "Head of Department",
+    //role: "Head of Project",
     description: "Experienced leader with expertise in cultural program management and team leadership.",
     imageUrl: "/team/nagendra.jpg",
     isLeadership: true,
@@ -72,7 +72,7 @@ const teamMembers: TeamMemberProps[] = [
   },
   {
     name: "Tanish Reddy",
-    role: "Co-Head of Technical Operations",
+    role: "Project Director",
     description: "Technical leader specializing in backend systems and infrastructure development.Technical leader with expertise in digital infrastructure and cultural preservation technology.Technical leader with expertise in digital infrastructure and cultural preservation technology.",
     imageUrl: "/team/tanish.jpeg",
     isLeadership: true,
