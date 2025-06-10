@@ -1,14 +1,49 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, Send, MessageSquare, MapPin, Building, User, Briefcase } from "lucide-react";
 import Link from "next/link";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
+import CustomPhoneInput from "@/components/PhoneInput";
+import StateDistrictSelect from "@/components/StateDistrictSelect";
 
 export default function ContactPage() {
+  const [isIndianNumber, setIsIndianNumber] = useState(true);
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [selectedState, setSelectedState] = useState('');
+  const [selectedDistrict, setSelectedDistrict] = useState('');
+  const [fullAddress, setFullAddress] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    organization: '',
+    designation: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const addressData = isIndianNumber 
+      ? { state: selectedState, district: selectedDistrict }
+      : { fullAddress };
+    
+    console.log({
+      ...formData,
+      phoneNumber,
+      ...addressData
+    });
+    // Handle form submission here
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -25,7 +60,7 @@ export default function ContactPage() {
         <div className="grid lg:grid-cols-3 gap-12">
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white p-8 rounded-xl shadow-lg">
+            <form onSubmit={handleSubmit} className="bg-white p-8 rounded-xl shadow-lg">
               <h2 className="text-2xl font-semibold mb-8 pb-4 border-b">Send us a Message</h2>
               
               <div className="space-y-6">
@@ -39,7 +74,10 @@ export default function ContactPage() {
                         <Input 
                           id="name" 
                           placeholder="John Doe"
-                          className="pl-10" 
+                          className="pl-10"
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          required
                         />
                         <User className="h-4 w-4 absolute left-3 top-3 text-gray-400" />
                       </div>
@@ -52,67 +90,44 @@ export default function ContactPage() {
                           id="email" 
                           type="email" 
                           placeholder="you@example.com"
-                          className="pl-10" 
+                          className="pl-10"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          required
                         />
                         <Mail className="h-4 w-4 absolute left-3 top-3 text-gray-400" />
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Phone Number</Label>
-                      <div className="relative">
-                        <Input 
-                          id="phone" 
-                          type="tel" 
-                          placeholder="+91 XXXXX XXXXX"
-                          className="pl-10" 
-                        />
-                        <Phone className="h-4 w-4 absolute left-3 top-3 text-gray-400" />
-                      </div>
+                      <CustomPhoneInput
+                        value={phoneNumber}
+                        onChange={setPhoneNumber}
+                        onCountryChange={setIsIndianNumber}
+                      />
                     </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="district">District</Label>
-                      <Select>
-                        <SelectTrigger id="district">
-                          <SelectValue placeholder="Select district" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="adilabad">Adilabad</SelectItem>
-                          <SelectItem value="bhadradri">Bhadradri Kothagudem</SelectItem>
-                          <SelectItem value="hyderabad">Hyderabad</SelectItem>
-                          <SelectItem value="jagtial">Jagtial</SelectItem>
-                          <SelectItem value="jangaon">Jangaon</SelectItem>
-                          <SelectItem value="jayashankar">Jayashankar Bhupalpally</SelectItem>
-                          <SelectItem value="jogulamba">Jogulamba Gadwal</SelectItem>
-                          <SelectItem value="kamareddy">Kamareddy</SelectItem>
-                          <SelectItem value="karimnagar">Karimnagar</SelectItem>
-                          <SelectItem value="khammam">Khammam</SelectItem>
-                          <SelectItem value="kumuram-bheem">Kumuram Bheem Asifabad</SelectItem>
-                          <SelectItem value="mahabubabad">Mahabubabad</SelectItem>
-                          <SelectItem value="mahabubnagar">Mahabubnagar</SelectItem>
-                          <SelectItem value="mancherial">Mancherial</SelectItem>
-                          <SelectItem value="medak">Medak</SelectItem>
-                          <SelectItem value="medchal">Medchal-Malkajgiri</SelectItem>
-                          <SelectItem value="mulugu">Mulugu</SelectItem>
-                          <SelectItem value="nagarkurnool">Nagarkurnool</SelectItem>
-                          <SelectItem value="nalgonda">Nalgonda</SelectItem>
-                          <SelectItem value="narayanpet">Narayanpet</SelectItem>
-                          <SelectItem value="nirmal">Nirmal</SelectItem>
-                          <SelectItem value="nizamabad">Nizamabad</SelectItem>
-                          <SelectItem value="peddapalli">Peddapalli</SelectItem>
-                          <SelectItem value="rajanna">Rajanna Sircilla</SelectItem>
-                          <SelectItem value="rangareddy">Ranga Reddy</SelectItem>
-                          <SelectItem value="sangareddy">Sangareddy</SelectItem>
-                          <SelectItem value="siddipet">Siddipet</SelectItem>
-                          <SelectItem value="suryapet">Suryapet</SelectItem>
-                          <SelectItem value="vikarabad">Vikarabad</SelectItem>
-                          <SelectItem value="wanaparthy">Wanaparthy</SelectItem>
-                          <SelectItem value="warangal">Warangal</SelectItem>
-                          <SelectItem value="yadadri">Yadadri Bhuvanagiri</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
+                    {isIndianNumber ? (
+                      <div className="space-y-2">
+                        <StateDistrictSelect
+                          onStateChange={setSelectedState}
+                          onDistrictChange={setSelectedDistrict}
+                          showDistrict={true}
+                        />
+                      </div>
+                    ) : (
+                      <div className="col-span-2 space-y-2">
+                        <Label htmlFor="address">Full Address</Label>
+                        <Textarea
+                          id="address"
+                          placeholder="Please provide your complete address including country"
+                          value={fullAddress}
+                          onChange={(e) => setFullAddress(e.target.value)}
+                          className="min-h-[100px]"
+                          required
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -126,7 +141,9 @@ export default function ContactPage() {
                         <Input 
                           id="organization" 
                           placeholder="Company/Organization"
-                          className="pl-10" 
+                          className="pl-10"
+                          value={formData.organization}
+                          onChange={handleInputChange}
                         />
                         <Building className="h-4 w-4 absolute left-3 top-3 text-gray-400" />
                       </div>
@@ -138,7 +155,9 @@ export default function ContactPage() {
                         <Input 
                           id="designation" 
                           placeholder="Your role"
-                          className="pl-10" 
+                          className="pl-10"
+                          value={formData.designation}
+                          onChange={handleInputChange}
                         />
                         <Briefcase className="h-4 w-4 absolute left-3 top-3 text-gray-400" />
                       </div>
@@ -151,7 +170,13 @@ export default function ContactPage() {
                   <h3 className="text-lg font-medium text-gray-800">Your Message</h3>
                   <div className="space-y-2">
                     <Label htmlFor="subject">Subject</Label>
-                    <Input id="subject" placeholder="What is this regarding?" />
+                    <Input 
+                      id="subject" 
+                      placeholder="What is this regarding?"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      required
+                    />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="message">Message</Label>
@@ -159,16 +184,19 @@ export default function ContactPage() {
                       id="message"
                       placeholder="Type your message here..."
                       className="min-h-[150px] resize-none"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
                     />
                   </div>
                 </div>
 
-                <Button size="lg" className="w-full bg-orange-600 hover:bg-orange-700">
+                <Button type="submit" size="lg" className="w-full bg-orange-600 hover:bg-orange-700">
                   <Send className="mr-2 h-4 w-4" />
                   Send Message
                 </Button>
               </div>
-            </div>
+            </form>
           </div>
           
           {/* Contact Information */}

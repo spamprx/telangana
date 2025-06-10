@@ -231,22 +231,125 @@ export default function Home() {
 
         {/* Buttons (Desktop only) */}
         <div className="container relative z-10 px-4 md:px-6 text-center text-white hidden md:block">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">Discover Telangana</h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
-            Exploring the rich heritage, vibrant culture, and political landscape of India's youngest state
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-orange-600 hover:bg-orange-700" onClick={scrollToMap}>
-              Explore State
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="bg-transparent text-white border-white hover:bg-white/10"
-            >
-              <Link href="/heritage">View Heritage</Link>
-            </Button>
+        </div>
+      </section>
+
+      {/* Welcome Section */}
+      <section className="relative py-16 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-white to-orange-50"></div>
+        <div className="absolute right-0 top-0 w-1/3 h-full bg-orange-100/30 blur-3xl transform rotate-12 translate-x-1/2"></div>
+        <div className="absolute left-0 bottom-0 w-1/3 h-full bg-orange-100/30 blur-3xl transform -rotate-12 -translate-x-1/2"></div>
+        
+        <div className="container relative px-4 md:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Welcome Card */}
+            <div className="lg:col-span-2">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-xl border border-orange-100 h-full">
+                <div className="flex flex-col space-y-6">
+                  <div className="inline-flex p-3 rounded-2xl bg-gradient-to-br from-orange-100 to-orange-50 self-start">
+                    <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-3 bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">
+                      Welcome to Telangana
+                    </h2>
+                    <p className="text-xl text-gray-600 leading-relaxed mb-6">
+                      Exploring the rich heritage, vibrant culture, and political landscape of India's youngest state
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                      <div className="space-y-2">
+                        <h3 className="text-lg font-semibold text-gray-800">Rich Cultural Heritage</h3>
+                        <p className="text-gray-600">Home to ancient temples, historic monuments, and vibrant festivals that showcase our diverse traditions.</p>
+                      </div>
+                      <div className="space-y-2">
+                        <h3 className="text-lg font-semibold text-gray-800">Economic Powerhouse</h3>
+                        <p className="text-gray-600">Leading in IT exports, pharmaceuticals, and sustainable agricultural practices.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Button 
+                      size="lg" 
+                      className="bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white shadow-lg hover:shadow-xl transition-all duration-200 min-w-[160px]" 
+                      onClick={scrollToMap}
+                    >
+                      Explore State
+                    </Button>
+                    <Button
+                      asChild
+                      size="lg"
+                      variant="outline"
+                      className="border-2 border-orange-200 text-orange-600 hover:bg-orange-50 shadow-lg hover:shadow-xl transition-all duration-200 min-w-[160px]"
+                    >
+                      <Link href="/heritage">View Heritage</Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Facts Card */}
+            <div className="lg:col-span-1">
+              <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-8 md:p-10 shadow-xl h-full text-white">
+                <div className="flex flex-col space-y-6">
+                  <div className="inline-flex p-3 rounded-2xl bg-white/10 backdrop-blur-sm self-start">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold">Quick Facts</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-white/90">Capital</h4>
+                        <p className="text-white/80">Hyderabad</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-white/90">Population</h4>
+                        <p className="text-white/80">35.2 Million</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-white/90">Formation Day</h4>
+                        <p className="text-white/80">June 2, 2014</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-white/90">Districts</h4>
+                        <p className="text-white/80">33 Administrative Districts</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -275,9 +378,7 @@ export default function Home() {
             <div>
               <h2 className="text-3xl font-bold tracking-tighter mb-4 text-orange-600">Our Moto</h2>
               <p className="text-lg text-gray-700 mb-6">
-                We are dedicated to promoting transparency, development, and citizen engagement across Telangana. Our
-                mission is to bridge the gap between governance and citizens by providing accurate information about
-                regional developments, political initiatives, and community needs.
+              A journey etched in heritage, guided by innovation — empowering tribes, nurturing rural strength, revitalizing agriculture, advancing health and education, and igniting youth, forging a legacy that elevates Telangana’s soul and spirit toward a brighter dawn.
               </p>
               <p className="text-lg text-gray-700 mb-6">
                 Through active participation and awareness, we aim to empower every citizen to contribute to Telangana's
