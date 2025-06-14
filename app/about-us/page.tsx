@@ -20,42 +20,42 @@ interface TeamMemberProps {
 const teamMembers: TeamMemberProps[] = [
   {
     name: "Asha Latha",
-    //role: "Head of Project",
+    // role: "Founding Patron",
     description:
       "Visionary leader with 20+ years of experience in cultural preservation and community development.",
     imageUrl: "/team/ashalatha.jpeg",
     isLeadership: true,
-    profileDetails: `Smt. Rayapudi Varalakshmi ‘Ashalatha’ is a dedicated social activist, seasoned politician, and the current President of BJP Mahila Morcha, Miryalaguda, Telangana. With over 25 years of community service and 8+ years of active political engagement, she has emerged as a respected grassroots leader committed to the ideals of the Bharatiya Janata Party. Her efforts focus on empowering women, uplifting underprivileged communities, and driving positive social transformation across caste, religion, and region.
+    profileDetails: `Smt. Rayapudi Varalakshmi 'Ashalatha' is a dedicated social activist, seasoned politician, and the current President of BJP Mahila Morcha, Miryalaguda, Telangana. With over 25 years of community service and 8+ years of active political engagement, she has emerged as a respected grassroots leader committed to the ideals of the Bharatiya Janata Party. Her efforts focus on empowering women, uplifting underprivileged communities, and driving positive social transformation across caste, religion, and region.
 
 She is the founder of multiple service organizations like Vasavamba Club and Vanitaku Vandanam, and has led impactful initiatives such as skill development for women, environmental campaigns, and large-scale COVID-19 relief programs. As a successful entrepreneur heading Sai Teja Solvent and Rayapudi Agro Oil Industries, she brings both administrative and grassroots strength to her leadership. Guided by the principle of "Sabka Saath, Sabka Vikas," she continues to serve as a powerful voice for social good and public welfare.`,
   },
   {
     name: "BS Murty",
-    //role: "Head of Project",
+    // role: "Founding Patron",
     description:
       "Strategic leader with extensive experience in cultural management and heritage preservation.",
     imageUrl: "/team/bs-murthy.jpg",
     isLeadership: true,
-    profileDetails: `Prof. B. S. Murty is the Director of IIT Hyderabad and an internationally acclaimed materials scientist known for his pioneering contributions to nanomaterials, high entropy alloys, bulk metallic glasses, and advanced aluminum alloys. A distinguished alumnus of IISc Bangalore and VNIT Nagpur, he has served as a faculty member at IIT Kharagpur and as Institute Professor at IIT Madras. He has authored over 470 research papers, guided more than 50 PhD scholars, filed 20 patents, and co-authored 4 books. He also played a key role in establishing India’s first Atom Probe Tomography facility and the Deakin-IITM Centre of Excellence on Advanced Materials.
+    profileDetails: `Prof. B. S. Murty is the Director of IIT Hyderabad and an internationally acclaimed materials scientist known for his pioneering contributions to nanomaterials, high entropy alloys, bulk metallic glasses, and advanced aluminum alloys. A distinguished alumnus of IISc Bangalore and VNIT Nagpur, he has served as a faculty member at IIT Kharagpur and as Institute Professor at IIT Madras. He has authored over 470 research papers, guided more than 50 PhD scholars, filed 20 patents, and co-authored 4 books. He also played a key role in establishing India's first Atom Probe Tomography facility and the Deakin-IITM Centre of Excellence on Advanced Materials.
 
 A recipient of the prestigious Shanti Swarup Bhatnagar Prize and JC Bose Fellowship, Prof. Murty is a fellow of TWAS, INSA, INAE, and other leading scientific academies. Since taking over as Director of IIT Hyderabad in August 2019, he has been instrumental in advancing interdisciplinary research, deep-tech innovation, and futuristic education, steering the institute toward becoming a global leader in science and technology.`,
   },
   {
     name: "Nagendra",
-    //role: "Head of Project",
+    // role: "Founding Patron",
     description:
       "Experienced leader with expertise in cultural program management and team leadership.",
     imageUrl: "/team/nagendra.jpg",
     isLeadership: true,
-    profileDetails: `Nagendra is a professional cricketer and IIT Bombay B.Tech alumnus, currently representing the Hyderabad Ranji Trophy team and playing county cricket in the UK. With roots in Hyderabad and global experience, he blends the discipline and resilience of sport with a deep commitment to development. Guided by his mother’s words — "When you open your eyes, see the nation; when you close them, see God" — Nagendra lives by a philosophy that balances national service with personal purpose.
+    profileDetails: `Nagendra is a professional cricketer and IIT Bombay B.Tech alumnus, currently representing the Hyderabad Ranji Trophy team and playing county cricket in the UK. With roots in Hyderabad and global experience, he blends the discipline and resilience of sport with a deep commitment to development. Guided by his mother's words — "When you open your eyes, see the nation; when you close them, see God" — Nagendra lives by a philosophy that balances national service with personal purpose.
 
 Beyond cricket, he has undertaken an extensive grassroots journey across Telangana, visiting over 8,000 villages, thousands of government schools, hospitals, and key infrastructure sites. His close engagement with farmers, educators, healthcare workers, and entrepreneurs has equipped him with a unique, ground-up perspective on regional challenges and opportunities. This fusion of athletic excellence, academic achievement, and development advocacy defines his mission to drive meaningful change.`,
   },
   {
     name: "Tanish Reddy",
-    role: "Project Director",
+    // role: "Director of Field Strategy and Operations",
     description:
-      "Technical leader specializing in backend systems and infrastructure development.Technical leader with expertise in digital infrastructure and cultural preservation technology.Technical leader with expertise in digital infrastructure and cultural preservation technology.",
+      "Technical leader specializing in backend systems and infrastructure development.",
     imageUrl: "/team/tanish.jpeg",
     isLeadership: true,
     socialLinks: {
@@ -63,35 +63,35 @@ Beyond cricket, he has undertaken an extensive grassroots journey across Telanga
       linkedin: "https://linkedin.com/in/praneeth",
       github: "https://github.com/praneeth",
     },
-    profileDetails: `Tanish Reddy is a dynamic and well-rounded student of Chemical Engineering at IIT Hyderabad, originally from Vijayawada. A national-level football and air rifle shooting athlete, he combines discipline and precision from sports with leadership and initiative on campus. He has served as the Finance Head of Milan, IIT Hyderabad’s premier cultural fest, and anchored two Gymkhana elections, reflecting his strong communication and organizational skills. Tanish also leads as the President of the Telugu Association at IITH and is currently the Mess Overall Coordinator, managing operations that impact the day-to-day campus experience.
+    profileDetails: `Tanish Reddy is a dynamic and well-rounded student of Chemical Engineering at IIT Hyderabad, originally from Vijayawada. A national-level football and air rifle shooting athlete, he combines discipline and precision from sports with leadership and initiative on campus. He has served as the Finance Head of Milan, IIT Hyderabad's premier cultural fest, and anchored two Gymkhana elections, reflecting his strong communication and organizational skills. Tanish also leads as the President of the Telugu Association at IITH and is currently the Mess Overall Coordinator, managing operations that impact the day-to-day campus experience.
 
 In parallel with his academic and leadership roles, Tanish is building his professional journey as a Full Stack Development Intern in Bengaluru. His ability to balance technical expertise, cultural engagement, and operational leadership highlights his versatility and commitment to holistic growth—both as a student and a future professional.`,
   },
   {
-    name: "Nihar",
-    role: "Co-Head of Technical Operations",
+    name: "Nihar Kartikeya",
+    // role: "Executive Lead – Vision & Expansion",
     description:
-      "Technical leader specializing in backend systems and infrastructure development.Technical leader with expertise in digital infrastructure and cultural preservation technology.Technical leader with expertise in digital infrastructure and cultural preservation technology.",
+      "Strategic leader with expertise in vision development and organizational growth.",
     imageUrl: "/team/nihar.jpeg",
     isLeadership: true,
     socialLinks: {
-      twitter: "https://twitter.com/praneeth",
-      linkedin: "https://linkedin.com/in/praneeth",
-      github: "https://github.com/praneeth",
+      twitter: "https://twitter.com/nihar",
+      linkedin: "https://linkedin.com/in/nihar",
+      github: "https://github.com/nihar",
     },
-    profileDetails: `Nihar is a technical expert with extensive experience in backend systems and infrastructure development. As Co-Head of Technical Operations, he focuses on building robust technical foundations for cultural preservation.
+    profileDetails: `Nihar Kartikeya is a visionary leader with a strong background in strategic planning and organizational development. As the Executive Lead for Vision & Expansion, he focuses on driving the organization's growth and ensuring its long-term success.
 
-    His expertise includes:
-    • Backend system architecture
-    • Infrastructure development
-    • Database management
-    • System security and optimization
-    
-    He has successfully designed and implemented several critical systems for cultural documentation and has been instrumental in ensuring the organization's technical infrastructure meets international standards.`,
+His expertise includes:
+• Strategic vision development
+• Organizational growth planning
+• Team leadership and mentorship
+• Innovation and transformation initiatives
+
+With a proven track record of successful project management and team leadership, Nihar brings a unique perspective to the organization's expansion efforts. His ability to balance innovation with practical implementation has been instrumental in driving the organization's success.`,
   },
   {
     name: "Deepthi Kanigiri",
-    role: "Lead Content Creator",
+    // role: "Lead Content Creator",
     description:
       "Oversees all content creation and maintains editorial standards.",
     imageUrl: "/team/deepthi.jpg",
@@ -106,7 +106,7 @@ In parallel with his academic and leadership roles, Tanish is building his profe
   },
   {
     name: "Bhargavi Peela",
-    role: "Content Writer",
+    // role: "Content Writer",
     description:
       "Specializes in coverage of local events and district profiles.",
     imageUrl: "/team/bhargavi.jpg",
@@ -121,7 +121,7 @@ In parallel with his academic and leadership roles, Tanish is building his profe
 
   {
     name: "Sreekari Pendem",
-    role: "Content Writer",
+    // role: "Content Writer",
     description:
       "Researches and writes engaging content about Telangana's culture and heritage.",
     imageUrl: "/team/sreekari.jpg",
@@ -136,7 +136,7 @@ In parallel with his academic and leadership roles, Tanish is building his profe
   },
   {
     name: "Praneeth Chamarthy",
-    role: "Web Developer",
+    // role: "Web Developer",
     description:
       "Manages the technical infrastructure and development of the website.",
     imageUrl: "/team/praneeth.jpeg",
@@ -150,7 +150,7 @@ In parallel with his academic and leadership roles, Tanish is building his profe
   },
   {
     name: "Gona Sanjana",
-    role: "Web Developer",
+    // role: "Web Developer",
     description:
       "Implements frontend features and ensures responsive design across devices.",
     imageUrl: "/team/sanjana.jpg",
@@ -167,7 +167,7 @@ In parallel with his academic and leadership roles, Tanish is building his profe
   },
   {
     name: "Arjun Nenavath",
-    role: "Lead Photographer",
+    // role: "Lead Photographer",
     description:
       "Captures the beauty of Telangana's landscapes, architecture, and people.",
     imageUrl: "/team/arjun.jpg",
@@ -181,7 +181,7 @@ In parallel with his academic and leadership roles, Tanish is building his profe
   },
   {
     name: "Karthik Kumar",
-    role: "Photographer",
+    // role: "Photographer",
     description:
       "Researches and writes engaging content about Telangana's culture and heritage.",
     imageUrl: "/team/karthik.jpg",
@@ -203,7 +203,7 @@ In parallel with his academic and leadership roles, Tanish is building his profe
 
   {
     name: "Charan",
-    role: "Management Team",
+    // role: "Management Team",
     description:
       "Manages the organization's operations and ensures smooth coordination.",
     imageUrl: "/team/charan1.jpg",
@@ -229,8 +229,8 @@ function TeamMemberCard({
   onViewProfile,
 }: TeamMemberProps & { onViewProfile: () => void }) {
   return (
-    <div className="bg-white/80 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-orange-100/50">
-      <div className="relative w-full h-64 overflow-hidden">
+    <div className="bg-white/80 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-orange-100/50 h-full flex flex-col">
+      <div className="relative w-full aspect-[4/3] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
         <Image
           src={imageUrl}
@@ -246,8 +246,8 @@ function TeamMemberCard({
           <p className="text-orange-200 text-sm font-medium">{role}</p>
         </div>
       </div>
-      <div className="p-4">
-        <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
+      <div className="p-4 flex-1 flex flex-col">
+        <p className="text-gray-600 text-sm leading-relaxed line-clamp-2 flex-1">
           {description}
         </p>
         <div className="mt-4 flex justify-between items-center">
@@ -310,9 +310,22 @@ function TeamMemberCard({
           </div>
           <button
             onClick={onViewProfile}
-            className="text-xs font-medium text-orange-600 hover:text-orange-700 transition-colors"
+            className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-400 to-orange-500 text-white text-sm font-medium rounded-lg hover:from-orange-500 hover:to-orange-600 transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
           >
-            View Profile →
+            View Profile
+            <svg
+              className="w-4 h-4 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
           </button>
         </div>
       </div>
@@ -954,18 +967,46 @@ function CoHeadProfile({
 
 export default function AboutUsPage() {
   const [dialogOpen, setDialogOpen] = useState(false);
-  const [selectedMember, setSelectedMember] = useState<
-    TeamMemberProps | undefined
-  >(undefined);
+  const [selectedMember, setSelectedMember] = useState<TeamMemberProps | undefined>(undefined);
 
   const handleViewProfile = (member: TeamMemberProps) => {
     setSelectedMember(member);
     setDialogOpen(true);
   };
 
-  const mainLeaders = teamMembers.slice(0, 4);
-  const coHeads = teamMembers.slice(4, 5);
-  const otherMembers = teamMembers.slice(5);
+  // Group team members by domain
+  const foundingPatrons = teamMembers.filter(member => 
+    member.name === "Asha Latha" || 
+    member.name === "BS Murty" || 
+    member.name === "Nagendra"
+  );
+
+  const fieldStrategy = teamMembers.filter(member => 
+    member.name === "Tanish Reddy"
+  );
+
+  const visionExpansion = teamMembers.filter(member => 
+    member.name === "Nihar Kartikeya"
+  );
+
+  const communicationDocs = teamMembers.filter(member => 
+    member.name === "Deepthi Kanigiri" || 
+    member.name === "Bhargavi Peela"
+  );
+
+  const digitalSystems = teamMembers.filter(member => 
+    member.name === "Praneeth Chamarthy" || 
+    member.name === "Gona Sanjana"
+  );
+
+  const dataVisualResearch = teamMembers.filter(member => 
+    member.name === "Karthik Kumar" || 
+    member.name === "Charan"
+  );
+
+  const designUX = teamMembers.filter(member => 
+    member.name === "Sreekari Pendem"
+  );
 
   return (
     <div className="container mx-auto px-4 py-10 md:py-16 bg-gradient-to-b from-gray-50 to-orange-50">
@@ -973,9 +1014,12 @@ export default function AboutUsPage() {
         Our Inspiration
       </h1>
       <div className="max-w-7xl mx-auto">
-        {/* Top Leadership Section */}
+        {/* Founding Patrons Section */}
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-orange-700">
+          Founding Patrons
+        </h2>
         <div className="space-y-24 mb-20">
-          {mainLeaders.map((leader) => (
+          {foundingPatrons.map((leader) => (
             <LeadershipProfile
               key={leader.name}
               {...leader}
@@ -984,13 +1028,41 @@ export default function AboutUsPage() {
           ))}
         </div>
 
-        {/* Co-Heads Section */}
+        {/* Field Strategy Section */}
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-orange-700">
-          Technical Leadership
+        Field Strategy & Operations
         </h2>
-        <div className="grid md:grid-cols-2 gap-8 mb-20">
-          {coHeads.map((member) => (
-            <CoHeadProfile
+        <div className="space-y-24 mb-20">
+          {fieldStrategy.map((leader) => (
+            <LeadershipProfile
+              key={leader.name}
+              {...leader}
+              onViewProfile={() => handleViewProfile(leader)}
+            />
+          ))}
+        </div>
+
+        {/* Vision & Expansion Section */}
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-orange-700">
+          Vision & Expansion
+        </h2>
+        <div className="space-y-24 mb-20">
+          {visionExpansion.map((leader) => (
+            <LeadershipProfile
+              key={leader.name}
+              {...leader}
+              onViewProfile={() => handleViewProfile(leader)}
+            />
+          ))}
+        </div>
+
+        {/* Communication & Documentation Section */}
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-orange-700">
+          Communication & Documentation
+        </h2>
+        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 mb-20">
+          {communicationDocs.map((member) => (
+            <TeamMemberCard
               key={member.name}
               {...member}
               onViewProfile={() => handleViewProfile(member)}
@@ -998,12 +1070,40 @@ export default function AboutUsPage() {
           ))}
         </div>
 
-        {/* Other Team Members */}
+        {/* Digital Systems Section */}
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-orange-700">
-          Our Team
+          Digital Systems
         </h2>
-        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {otherMembers.map((member) => (
+        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 mb-20">
+          {digitalSystems.map((member) => (
+            <TeamMemberCard
+              key={member.name}
+              {...member}
+              onViewProfile={() => handleViewProfile(member)}
+            />
+          ))}
+        </div>
+
+        {/* Data Curation & Visual Research Section */}
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-orange-700">
+          Data Curation & Visual Research
+        </h2>
+        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 mb-20">
+          {dataVisualResearch.map((member) => (
+            <TeamMemberCard
+              key={member.name}
+              {...member}
+              onViewProfile={() => handleViewProfile(member)}
+            />
+          ))}
+        </div>
+
+        {/* Design & User Experience Section */}
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-orange-700">
+          Design & User Experience
+        </h2>
+        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 mb-20">
+          {designUX.map((member) => (
             <TeamMemberCard
               key={member.name}
               {...member}

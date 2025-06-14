@@ -73,7 +73,7 @@ export default function ContactPage() {
                       <div className="relative">
                         <Input 
                           id="name" 
-                          placeholder="John Doe"
+                          placeholder="your name"
                           className="pl-10"
                           value={formData.name}
                           onChange={handleInputChange}
@@ -247,7 +247,7 @@ export default function ContactPage() {
               <h2 className="text-2xl font-semibold mb-6 pb-4 border-b">Quick Connect</h2>
               <div className="space-y-6">
                 <Link href="https://wa.me/919440725957" target="_blank" className="block">
-                  <Button className="w-full bg-green-500 hover:bg-green-600 text-white h-12 text-base font-medium">
+                  <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white h-12 text-base font-medium">
                     <MessageSquare className="mr-3 h-5 w-5" />
                     Chat on WhatsApp
                   </Button>
