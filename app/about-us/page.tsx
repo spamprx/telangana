@@ -41,6 +41,16 @@ She is the founder of multiple service organizations like Vasavamba Club and Van
 A recipient of the prestigious Shanti Swarup Bhatnagar Prize and JC Bose Fellowship, Prof. Murty is a fellow of TWAS, INSA, INAE, and other leading scientific academies. Since taking over as Director of IIT Hyderabad in August 2019, he has been instrumental in advancing interdisciplinary research, deep-tech innovation, and futuristic education, steering the institute toward becoming a global leader in science and technology.`,
   },
   {
+    name: "Prof. Mandela Pandu Ranga Rao",
+    //role: "Retired Professor, NIT Warangal",
+    description: "Expert in Water Resources Management and Kakatiya Heritage Conservation",
+    imageUrl: "https://example.com/prof-mp-rao.jpg", // Placeholder - replace with actual image URL
+    isLeadership: true,
+    profileDetails: `Prof. M. Pandu Ranga Rao, a distinguished academician and civil engineer, dedicated over three decades of his life to the National Institute of Technology, Warangal (1962–1992). His legacy spans across sectors such as water resource engineering, heritage restoration, and public health infrastructure. He was conferred the title 'Bhagiratha' for resolving Warangal's water crisis in the early 1970s and played a pivotal role in conceptualizing the Mid Manair Dam—now part of the Kaleshwaram Project. His career is a symphony of service to society, combining technical acumen with deep civic responsibility.
+  
+  As a champion of Kakatiya heritage, Prof. Rao led restoration projects like the 1000 Pillar Temple and contributed significantly to Ramappa Temple's recognition as a UNESCO World Heritage Site. He applied traditional techniques, like sandbox foundations, to modern challenges—including the redesign of Rama Janmabhoomi Temple’s base. His contributions are not just technical but philosophical—harmonizing the timeless with the contemporary, engineering with devotion, and science with heritage.`
+  },
+  {
     name: "Nagendra",
     // role: "Founding Patron",
     description:
@@ -63,9 +73,7 @@ Beyond cricket, he has undertaken an extensive grassroots journey across Telanga
       linkedin: "https://linkedin.com/in/praneeth",
       github: "https://github.com/praneeth",
     },
-    profileDetails: `Tanish Reddy is a dynamic and well-rounded student of Chemical Engineering at IIT Hyderabad, originally from Vijayawada. A national-level football and air rifle shooting athlete, he combines discipline and precision from sports with leadership and initiative on campus. He has served as the Finance Head of Milan, IIT Hyderabad's premier cultural fest, and anchored two Gymkhana elections, reflecting his strong communication and organizational skills. Tanish also leads as the President of the Telugu Association at IITH and is currently the Mess Overall Coordinator, managing operations that impact the day-to-day campus experience.
-
-In parallel with his academic and leadership roles, Tanish is building his professional journey as a Full Stack Development Intern in Bengaluru. His ability to balance technical expertise, cultural engagement, and operational leadership highlights his versatility and commitment to holistic growth—both as a student and a future professional.`,
+    profileDetails: `Tanish Reddy is a socially committed and politically conscious student of Chemical Engineering at IIT Hyderabad, hailing from Allagadda. A professional air rifle shooter and passionate football enthusiast, he brings discipline, focus, and strategic thinking from sports into every area of his life. Known for his inclusive leadership, adaptability, and strong sense of service, he has actively contributed to campus life through multiple impactful roles — serving as the Finance Head of Milan, IIT Hyderabad’s premier fest, anchoring three consecutive Gymkhana elections, and leading as both the President of the Telugu Association and the Mess Overall Coordinator. In each role, Tanish has demonstrated an unwavering commitment to transparency, cultural harmony, and student welfare, ensuring operational excellence in key student services. A passionate advocate for equality, mental health awareness, and environmental sustainability, he stands firmly against all forms of discrimination and strives to foster a respectful, united community. His calm problem-solving approach, ability to connect with people, and deep political sensibility reflect a broader vision — one rooted in the values of public service, social equity, and sustainable development for the country.`,
   },
   {
     name: "Nihar Kartikeya",
@@ -139,7 +147,7 @@ With a proven track record of successful project management and team leadership,
     // role: "Web Developer",
     description:
       "Manages the technical infrastructure and development of the website.",
-    imageUrl: "/team/praneeth.jpeg",
+    imageUrl: "/team/praneeth1.jpeg",
     socialLinks: {
       twitter: "https://twitter.com/praneeth",
       linkedin: "https://linkedin.com/in/praneeth",
@@ -153,7 +161,7 @@ With a proven track record of successful project management and team leadership,
     // role: "Web Developer",
     description:
       "Implements frontend features and ensures responsive design across devices.",
-    imageUrl: "/team/sanjana.jpg",
+    imageUrl: "/team/sanjana.jpeg",
     socialLinks: {
       twitter: "https://twitter.com/praneeth",
       linkedin: "https://linkedin.com/in/praneeth",
@@ -229,104 +237,118 @@ function TeamMemberCard({
   onViewProfile,
 }: TeamMemberProps & { onViewProfile: () => void }) {
   return (
-    <div className="bg-white/80 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-orange-100/50 h-full flex flex-col">
-      <div className="relative w-full aspect-[4/3] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
-        <Image
-          src={imageUrl}
-          alt={`${name} - ${role}`}
-          fill
-          style={{ objectFit: "cover" }}
-          className="transition-transform duration-500 hover:scale-105"
-        />
-        <div className="absolute bottom-4 left-4 right-4 z-20">
-          <h3 className="text-lg font-semibold text-white drop-shadow-md">
-            {name}
-          </h3>
-          <p className="text-orange-200 text-sm font-medium">{role}</p>
-        </div>
-      </div>
-      <div className="p-4 flex-1 flex flex-col">
-        <p className="text-gray-600 text-sm leading-relaxed line-clamp-2 flex-1">
-          {description}
-        </p>
-        <div className="mt-4 flex justify-between items-center">
-          <div className="flex space-x-2">
-            {socialLinks?.twitter && (
-              <a
-                href={socialLinks.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-7 h-7 rounded-full bg-orange-50 flex items-center justify-center text-orange-500 hover:bg-orange-100 transition-colors"
+    <div className="group relative">
+      {/* Dramatic background effect */}
+      <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 via-orange-500 to-orange-600 rounded-[2rem] blur-xl opacity-70 group-hover:opacity-100 transition-all duration-500 group-hover:duration-200 animate-gradient-xy"></div>
+      
+      <div className="relative h-full bg-orange-900 rounded-[2rem] p-0.5">
+        <div className="h-full bg-gradient-to-br from-orange-800 via-orange-900 to-orange-950 rounded-[2rem] overflow-hidden">
+          {/* Image Section with Dramatic Overlay */}
+          <div className="relative h-[400px] overflow-hidden">
+            {/* Geometric Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-600/30 via-transparent to-black/80 z-10"></div>
+            <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-30 mix-blend-overlay z-20"></div>
+            
+            {/* Dynamic Image */}
+            <Image
+              src={imageUrl}
+              alt={name}
+              fill
+              style={{ objectFit: "cover" }}
+              className="transform scale-110 group-hover:scale-125 transition-transform duration-700 ease-in-out"
+            />
+
+            {/* Dramatic Text Overlay */}
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent pt-20 pb-8 px-8 z-30">
+              <h3 className="text-4xl font-bold text-white mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                {name}
+              </h3>
+              {role && (
+                <p className="text-orange-400 text-xl font-medium transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                  {role}
+                </p>
+              )}
+            </div>
+
+            {/* Accent Lines */}
+            <div className="absolute top-0 left-0 w-24 h-24 border-l-4 border-t-4 border-orange-500/50 rounded-tl-[2rem] z-20"></div>
+            <div className="absolute bottom-0 right-0 w-24 h-24 border-r-4 border-b-4 border-orange-500/50 rounded-br-[2rem] z-20"></div>
+          </div>
+
+          {/* Content Section */}
+          <div className="relative p-8 bg-gradient-to-br from-orange-800 via-orange-900 to-orange-950">
+            {/* Description with Custom Scrollbar */}
+            <div className="mb-8">
+              <p className="text-gray-300 text-lg leading-relaxed">
+                {description}
+              </p>
+            </div>
+
+            {/* Interactive Elements Container */}
+            <div className="flex items-center justify-between">
+              {/* Social Links */}
+              <div className="flex gap-4">
+                {socialLinks?.twitter && (
+                  <a
+                    href={socialLinks.twitter}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 rounded-xl bg-orange-500/10 hover:bg-orange-500/20 flex items-center justify-center text-orange-400 hover:text-orange-300 transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84" />
+                    </svg>
+                  </a>
+                )}
+                {socialLinks?.linkedin && (
+                  <a
+                    href={socialLinks.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 rounded-xl bg-orange-500/10 hover:bg-orange-500/20 flex items-center justify-center text-orange-400 hover:text-orange-300 transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clipRule="evenodd" />
+                    </svg>
+                  </a>
+                )}
+                {socialLinks?.github && (
+                  <a
+                    href={socialLinks.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 rounded-xl bg-orange-500/10 hover:bg-orange-500/20 flex items-center justify-center text-orange-400 hover:text-orange-300 transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M10 0C4.477 0 0 4.477 0 10c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.087.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0110 4.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.933.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C17.14 18.163 20 14.418 20 10c0-5.523-4.477-10-10-10z" />
+                    </svg>
+                  </a>
+                )}
+              </div>
+
+              {/* Dramatic Call-to-Action Button */}
+              <button
+                onClick={onViewProfile}
+                className="group/btn relative inline-flex items-center bg-gradient-to-r from-orange-600 to-orange-500 text-white text-lg font-bold py-4 px-8 rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_8px_rgba(251,146,60,0.3)]"
               >
+                <span className="relative z-10">View Profile</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-400 transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-500 origin-left"></div>
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-3.5 w-3.5"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84" />
-                </svg>
-              </a>
-            )}
-            {socialLinks?.linkedin && (
-              <a
-                href={socialLinks.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-7 h-7 rounded-full bg-orange-50 flex items-center justify-center text-orange-500 hover:bg-orange-100 transition-colors"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-3.5 w-3.5"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+                  className="w-6 h-6 ml-3 transform group-hover/btn:translate-x-2 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
                   <path
-                    fillRule="evenodd"
-                    d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
-                    clipRule="evenodd"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2.5"
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
                   />
                 </svg>
-              </a>
-            )}
-            {socialLinks?.github && (
-              <a
-                href={socialLinks.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-7 h-7 rounded-full bg-orange-50 flex items-center justify-center text-orange-500 hover:bg-orange-100 transition-colors"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-3.5 w-3.5"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path d="M10 0C4.477 0 0 4.477 0 10c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.087.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0110 4.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.933.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C17.14 18.163 20 14.418 20 10c0-5.523-4.477-10-10-10z" />
-                </svg>
-              </a>
-            )}
+              </button>
+            </div>
           </div>
-          <button
-            onClick={onViewProfile}
-            className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-400 to-orange-500 text-white text-sm font-medium rounded-lg hover:from-orange-500 hover:to-orange-600 transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
-          >
-            View Profile
-            <svg
-              className="w-4 h-4 ml-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
         </div>
       </div>
     </div>
@@ -885,7 +907,7 @@ function CoHeadProfile({
                       href={socialLinks.twitter}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-orange-500 hover:bg-orange-100 hover:text-orange-700 transition-colors shadow"
+                      className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-orange-500 hover:bg-orange-100 hover:text-orange-700 transition-colors shadow-lg hover:shadow-xl transform hover:scale-110"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -902,7 +924,7 @@ function CoHeadProfile({
                       href={socialLinks.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-orange-500 hover:bg-orange-100 hover:text-orange-700 transition-colors shadow"
+                      className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-orange-500 hover:bg-orange-100 hover:text-orange-700 transition-colors shadow-lg hover:shadow-xl transform hover:scale-110"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -923,7 +945,7 @@ function CoHeadProfile({
                       href={socialLinks.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-orange-500 hover:bg-orange-100 hover:text-orange-700 transition-colors shadow"
+                      className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-orange-500 hover:bg-orange-100 hover:text-orange-700 transition-colors shadow-lg hover:shadow-xl transform hover:scale-110"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -952,9 +974,22 @@ function CoHeadProfile({
                 {/* View Profile Button */}
                 <button
                   onClick={onViewProfile}
-                  className="w-full bg-gradient-to-r from-orange-400 to-orange-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-orange-500 hover:to-orange-600 transition-all duration-300 shadow-md hover:shadow-lg"
+                  className="w-full bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white py-3 px-6 rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center group/btn"
                 >
-                  View Complete Profile
+                  <span>View Profile</span>
+                  <svg
+                    className="w-5 h-5 ml-2 transform group-hover/btn:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
+                  </svg>
                 </button>
               </div>
             </div>
@@ -978,6 +1013,7 @@ export default function AboutUsPage() {
   const foundingPatrons = teamMembers.filter(member => 
     member.name === "Asha Latha" || 
     member.name === "BS Murty" || 
+    member.name === "Prof. Mandela Pandu Ranga Rao" ||
     member.name === "Nagendra"
   );
 

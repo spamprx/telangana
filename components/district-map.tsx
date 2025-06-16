@@ -42,18 +42,19 @@ export function DistrictMap() {
                 const target = e.target as SVGPathElement
                 const districtName = target.getAttribute('name')
                 
+                if (districtName === 'Mahbubnagar' || districtName === 'Narayanpet' || districtName === 'Jayashankar' || districtName === 'Mulugu') {
+                  return; // Skip hover/tap effect for these districts
+                }
+                
                 if (target.parentNode) {
                   target.parentNode.appendChild(target)
                 }
                 
-                const originalStroke = target.style.stroke
-                const originalStrokeWidth = target.style.strokeWidth
-                const originalTransform = target.style.transform
-                const originalZIndex = target.style.zIndex
-                
-                target.style.stroke = '#2563eb' 
-                target.style.strokeWidth = '3'
-                target.style.transform = 'scale(1.1)' 
+                if (!target.hasAttribute('data-original-transform')) {
+                  target.setAttribute('data-original-transform', target.getAttribute('transform') || '');
+                }
+                const originalTransform = target.getAttribute('data-original-transform') || '';
+                target.setAttribute('transform', `${originalTransform} scale(1.1)`)
                 target.style.transformOrigin = 'center'
                 target.style.transition = 'all 0.3s ease-in'
                 target.style.zIndex = '1' 
@@ -61,10 +62,7 @@ export function DistrictMap() {
                 setActiveDistrict(districtName)
                 
                 const handleMouseLeave = () => {
-                  target.style.stroke = originalStroke
-                  target.style.strokeWidth = originalStrokeWidth
-                  target.style.transform = originalTransform
-                  target.style.zIndex = originalZIndex
+                  target.setAttribute('transform', originalTransform)
                   setActiveDistrict(null)
                   
                   target.removeEventListener('mouseleave', handleMouseLeave)
@@ -91,13 +89,21 @@ export function DistrictMap() {
                 const target = e.target as SVGPathElement
                 const districtName = target.getAttribute('name')
                 
+                if (districtName === 'Mahbubnagar' || districtName === 'Narayanpet' || districtName === 'Jayashankar' || districtName === 'Mulugu') {
+                  return; // Skip hover/tap effect for these districts
+                }
+                
                 // Reset all paths styling
                 const paths = svgRef.current?.querySelectorAll('.tel') || []
                 paths.forEach(p => {
                   const pathElement = p as SVGPathElement
+                  const pathName = pathElement.getAttribute('name')
+                  const isSpecialDistrict = pathName === 'Mahbubnagar' || pathName === 'Narayanpet' || pathName === 'Jayashankar' || pathName === 'Mulugu'
+                  const baseTransform = isSpecialDistrict ? 'scale(1.75) translate(-45,-65)' : ''
+                  
                   pathElement.style.stroke = ''
                   pathElement.style.strokeWidth = ''
-                  pathElement.style.transform = ''
+                  pathElement.style.transform = baseTransform
                   pathElement.style.zIndex = ''
                 })
                 
@@ -106,10 +112,11 @@ export function DistrictMap() {
                   target.parentNode.appendChild(target)
                 }
                 
-                // Style the tapped district
-                target.style.stroke = '#2563eb'
-                target.style.strokeWidth = '2'
-                target.style.transform = 'scale(1.05)'
+                if (!target.hasAttribute('data-original-transform')) {
+                  target.setAttribute('data-original-transform', target.getAttribute('transform') || '');
+                }
+                const originalTransform = target.getAttribute('data-original-transform') || '';
+                target.setAttribute('transform', `${originalTransform} scale(1.05)`)
                 target.style.transformOrigin = 'center'
                 target.style.transition = 'all 0.3s ease'
                 target.style.zIndex = '10'
