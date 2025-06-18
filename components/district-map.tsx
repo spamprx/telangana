@@ -128,7 +128,7 @@ export function DistrictMap() {
                 e.preventDefault()
               })
             }
-          })
+          }) 
           
           const svgElement = svgRef.current.querySelector('svg')
           if (svgElement) {

@@ -1066,7 +1066,7 @@ export default function AboutUsPage() {
 
         {/* Field Strategy Section */}
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-orange-700">
-        Field Strategy & Operations
+        Director of Field Strategy and Operations
         </h2>
         <div className="space-y-24 mb-20">
           {fieldStrategy.map((leader) => (
@@ -1080,7 +1080,7 @@ export default function AboutUsPage() {
 
         {/* Vision & Expansion Section */}
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-orange-700">
-          Vision & Expansion
+        Executive Lead – Vision & Expansion
         </h2>
         <div className="space-y-24 mb-20">
           {visionExpansion.map((leader) => (
@@ -1094,7 +1094,7 @@ export default function AboutUsPage() {
 
         {/* Communication & Documentation Section */}
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-orange-700">
-          Communication & Documentation
+          Communication & Documentation Leads
         </h2>
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 mb-20">
           {communicationDocs.map((member) => (
@@ -1108,7 +1108,7 @@ export default function AboutUsPage() {
 
         {/* Digital Systems Section */}
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-orange-700">
-          Digital Systems
+          Digital Systems Development Leads
         </h2>
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 mb-20">
           {digitalSystems.map((member) => (
@@ -1122,7 +1122,7 @@ export default function AboutUsPage() {
 
         {/* Data Curation & Visual Research Section */}
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-orange-700">
-          Data Curation & Visual Research
+          Data Curation & Visual Research Leads
         </h2>
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 mb-20">
           {dataVisualResearch.map((member) => (
@@ -1136,7 +1136,7 @@ export default function AboutUsPage() {
 
         {/* Design & User Experience Section */}
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-orange-700">
-          Design & User Experience
+          Design & User Experience Lead
         </h2>
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 mb-20">
           {designUX.map((member) => (
