@@ -209,23 +209,23 @@ With a proven track record of successful project management and team leadership,
     Thanks for stopping by!`,
   },
 
-  {
-    name: "Charan",
-    // role: "Management Team",
-    description:
-      "Manages the organization's operations and ensures smooth coordination.",
-    imageUrl: "/team/charan1.jpg",
-    socialLinks: {
-      twitter: "https://twitter.com/praneeth",
-      linkedin: "https://linkedin.com/in/praneeth",
-      github: "https://github.com/praneeth",
-    },
-    profileDetails: ` Hi! I'm G Sai Charan, a second-year Chemical Engineering student at IIT Hyderabad. I'm deeply passionate about both the world of chemical processes and the fast-paced realm of international trading—especially in currencies, commodities, and forex.
+//   {
+//     name: "Charan",
+//     // role: "Management Team",
+//     description:
+//       "Manages the organization's operations and ensures smooth coordination.",
+//     imageUrl: "/team/charan1.jpg",
+//     socialLinks: {
+//       twitter: "https://twitter.com/praneeth",
+//       linkedin: "https://linkedin.com/in/praneeth",
+//       github: "https://github.com/praneeth",
+//     },
+//     profileDetails: ` Hi! I'm G Sai Charan, a second-year Chemical Engineering student at IIT Hyderabad. I'm deeply passionate about both the world of chemical processes and the fast-paced realm of international trading—especially in currencies, commodities, and forex.
 
-With a growing foundation in chemical process calculations and core engineering subjects, I enjoy exploring how theoretical knowledge translates into real-world applications. At the same time, I'm fascinated by global markets and the strategies that drive international trade—an intersection where logic, analysis, and timing all come into play.
+// With a growing foundation in chemical process calculations and core engineering subjects, I enjoy exploring how theoretical knowledge translates into real-world applications. At the same time, I'm fascinated by global markets and the strategies that drive international trade—an intersection where logic, analysis, and timing all come into play.
 
-When I'm not diving into equations or watching market trends, you'll probably find me engaging in meaningful conversations, exploring new ideas, or just unwinding with music or a good read. Interested in exploring and solving real world problems.`,
-  },
+// When I'm not diving into equations or watching market trends, you'll probably find me engaging in meaningful conversations, exploring new ideas, or just unwinding with music or a good read. Interested in exploring and solving real world problems.`,
+//   },
 ];
 
 function TeamMemberCard({
