@@ -25,9 +25,11 @@ const teamMembers: TeamMemberProps[] = [
       "Visionary leader with 20+ years of experience in cultural preservation and community development.",
     imageUrl: "/team/ashalatha.jpeg",
     isLeadership: true,
-    profileDetails: `Smt. Rayapudi Varalakshmi 'Ashalatha' is a dedicated social activist, seasoned politician, and the current President of BJP Mahila Morcha, Miryalaguda, Telangana. With over 25 years of community service and 8+ years of active political engagement, she has emerged as a respected grassroots leader committed to the ideals of the Bharatiya Janata Party. Her efforts focus on empowering women, uplifting underprivileged communities, and driving positive social transformation across caste, religion, and region.
+    profileDetails: `Smt. Rayapudi Varalakshmi 'Ashalatha' is a dedicated social activist, seasoned public leader, and the current President of the Mahila Morcha, Miryalaguda, Telangana. With over 25 years of committed community service and more than 8 years of active leadership in public affairs, she has emerged as a respected grassroots figure devoted to social upliftment and community development.
 
-She is the founder of multiple service organizations like Vasavamba Club and Vanitaku Vandanam, and has led impactful initiatives such as skill development for women, environmental campaigns, and large-scale COVID-19 relief programs. As a successful entrepreneur heading Sai Teja Solvent and Rayapudi Agro Oil Industries, she brings both administrative and grassroots strength to her leadership. Guided by the principle of "Sabka Saath, Sabka Vikas," she continues to serve as a powerful voice for social good and public welfare.`,
+She is the founder of several impactful service organizations, including Vasavamba Club and Vanitaku Vandanam, through which she has spearheaded initiatives such as women’s skill development programs, environmental awareness campaigns, and extensive COVID-19 relief efforts. Her mission has consistently focused on empowering women, supporting marginalized communities, and fostering inclusive growth across all sections of society.
+
+Alongside her social work, she is also a successful entrepreneur, heading Sai Teja Solvent and Rayapudi Agro Oil Industries, bringing a blend of administrative acumen and grassroots insight to her leadership. Guided by the principle of “Collective Progress for All”, she continues to serve as a strong advocate for social justice, public welfare, and meaningful transformation.`,
   },
   {
     name: "BS Murty",
@@ -44,7 +46,7 @@ A recipient of the prestigious Shanti Swarup Bhatnagar Prize and JC Bose Fellows
     name: "Prof. Mandela Pandu Ranga Rao",
     //role: "Retired Professor, NIT Warangal",
     description: "Expert in Water Resources Management and Kakatiya Heritage Conservation",
-    imageUrl: "https://example.com/prof-mp-rao.jpg", // Placeholder - replace with actual image URL
+    imageUrl: "/team/mp-rao.jpg", // Placeholder - replace with actual image URL
     isLeadership: true,
     profileDetails: `Prof. M. Pandu Ranga Rao, a distinguished academician and civil engineer, dedicated over three decades of his life to the National Institute of Technology, Warangal (1962–1992). His legacy spans across sectors such as water resource engineering, heritage restoration, and public health infrastructure. He was conferred the title 'Bhagiratha' for resolving Warangal's water crisis in the early 1970s and played a pivotal role in conceptualizing the Mid Manair Dam—now part of the Kaleshwaram Project. His career is a symphony of service to society, combining technical acumen with deep civic responsibility.
   
